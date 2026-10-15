@@ -98,12 +98,12 @@ export const Footer: React.FC = () => {
                         </h3>
                         <ul className="space-y-2.5 text-sm text-slate-400">
                             <li>
-                                <Link href="#privacy" className="hover:text-white transition-colors">
+                                <Link href="/privacy" className="hover:text-white transition-colors">
                                     Privacy Policy
                                 </Link>
                             </li>
                             <li>
-                                <Link href="#terms" className="hover:text-white transition-colors">
+                                <Link href="/terms" className="hover:text-white transition-colors">
                                     Terms & Conditions
                                 </Link>
                             </li>
