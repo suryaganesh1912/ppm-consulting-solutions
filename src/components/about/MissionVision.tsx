@@ -32,7 +32,7 @@ export const MissionVision: React.FC = () => {
                             </div>
                             <h3 className="text-xl font-bold text-slate-900">Our Mission</h3>
                             <p className="text-slate-600 leading-relaxed font-normal text-sm md:text-base">
-                                &ldquo;To empower organizations with robust, scalable Oracle Project Portfolio Management (Oracle PPM) solutions—optimizing project financial controls, enhancing cost and revenue visibility, and driving sustainable operational performance.&rdquo;
+                                &ldquo;Our mission is to help Oracle Cloud customers achieve their business goals through affordable, high-quality Oracle PPM consulting, implementation, and support services.&rdquo;
                             </p>
                         </div>
                         <div className="mt-6 pt-4 border-t border-slate-100 text-xs font-semibold text-sky-700 uppercase tracking-wider">

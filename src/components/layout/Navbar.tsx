@@ -14,7 +14,6 @@ export const navLinks = [
     { name: "Services", href: "/services" },
     { name: "Oracle PPM", href: "/oracle-ppm" },
     { name: "Industries", href: "/industries" },
-    { name: "Case Studies", href: "/case-studies" },
     { name: "Careers", href: "/careers" },
     { name: "Contact", href: "/contact" },
 ];
@@ -80,8 +79,8 @@ export const Navbar: React.FC = () => {
                                     href={link.href}
                                     aria-current={active ? "page" : undefined}
                                     className={`px-3 py-2 text-xs xl:text-sm rounded-md transition-colors relative group focus:outline-none focus:ring-2 focus:ring-sky-500 ${active
-                                            ? "font-bold text-slate-900 bg-sky-50/60"
-                                            : "font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-100/70"
+                                        ? "font-bold text-slate-900 bg-sky-50/60"
+                                        : "font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-100/70"
                                         }`}
                                 >
                                     <span className={active ? "text-sky-600 font-bold" : ""}>{link.name}</span>
@@ -145,8 +144,8 @@ export const Navbar: React.FC = () => {
                                             aria-current={active ? "page" : undefined}
                                             onClick={() => setMobileMenuOpen(false)}
                                             className={`flex items-center justify-between px-4 py-3 rounded-lg text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500 ${active
-                                                    ? "bg-sky-50 text-sky-700 font-bold border-l-4 border-sky-600 pl-3"
-                                                    : "font-semibold text-slate-800 hover:bg-slate-50 hover:text-sky-700"
+                                                ? "bg-sky-50 text-sky-700 font-bold border-l-4 border-sky-600 pl-3"
+                                                : "font-semibold text-slate-800 hover:bg-slate-50 hover:text-sky-700"
                                                 }`}
                                         >
                                             <span className={active ? "text-sky-700 font-bold" : ""}>{link.name}</span>

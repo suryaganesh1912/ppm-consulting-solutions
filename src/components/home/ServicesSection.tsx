@@ -31,39 +31,11 @@ const consultingServices = [
         tag: "Implementation",
     },
     {
-        title: "Project Financial Management",
-        description:
-            "Comprehensive financial controls, multi-currency accounting, capital project tracking, and executive portfolio budgeting.",
-        icon: Landmark,
-        tag: "Financial Control",
-    },
-    {
-        title: "Project Costing",
-        description:
-            "Implementation of expenditure type structures, labor rate schedules, indirect burdening rules, and detailed cost variance analysis.",
-        icon: Calculator,
-        tag: "Cost Control",
-    },
-    {
-        title: "Project Billing",
-        description:
-            "Automated revenue accounting, client invoicing workflows, multi-contract billing, and seamless integration with Financials.",
-        icon: Receipt,
-        tag: "Revenue Engine",
-    },
-    {
-        title: "Project Planning",
-        description:
-            "Work breakdown structure optimization, resource capacity planning, milestone scheduling, and enterprise project portfolio controls.",
-        icon: CalendarCheck,
-        tag: "Planning & Control",
-    },
-    {
         title: "Oracle PPM Support",
         description:
-            "Post-implementation support, system health checks, quarter release updates, application maintenance, and user training.",
+            "Post-implementation support, system health checks, quarterly release updates, application maintenance, and user training.",
         icon: Headphones,
-        tag: "Managed Support",
+        tag: "Managed Services",
     },
 ];
 
@@ -79,7 +51,7 @@ export const ServicesSection: React.FC = () => {
                     theme="light"
                 />
 
-                <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
                     {consultingServices.map((service, idx) => (
                         <ServiceCard
                             key={service.title}
@@ -91,18 +63,6 @@ export const ServicesSection: React.FC = () => {
                             delay={0.06 * idx}
                         />
                     ))}
-                </div>
-
-                {/* View All Services Callout */}
-                <div className="mt-12 text-center">
-                    <Button
-                        href="#contact"
-                        variant="secondary"
-                        size="lg"
-                        icon={<ArrowRight className="w-4 h-4" />}
-                    >
-                        View All Services
-                    </Button>
                 </div>
             </div>
         </section>

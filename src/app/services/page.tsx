@@ -24,7 +24,7 @@ export default function ServicesPage() {
                     title="Discuss Your Oracle PPM Requirements"
                     text="Looking to implement Oracle PPM Cloud, optimize existing financial rules, or get ongoing managed support? Connect with our enterprise consulting team."
                     buttonText="Contact Us"
-                    buttonHref="/#contact"
+                    buttonHref="/contact"
                 />
             </main>
 

@@ -9,7 +9,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "/services",
         "/oracle-ppm",
         "/industries",
-        "/case-studies",
         "/careers",
         "/contact",
         "/privacy",

@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { SectionHeading } from "../ui/SectionHeading";
-import { Target, Landmark, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { ShieldCheck, CheckCircle2 } from "lucide-react";
 
 export const WhoWeAre: React.FC = () => {
     return (
@@ -32,28 +32,6 @@ export const WhoWeAre: React.FC = () => {
                         <p className="text-slate-600 leading-relaxed font-normal">
                             We focus on helping enterprises streamline project financial management, optimize project costing and billing rules, establish robust planning controls, and configure custom analytics across complex portfolio environments.
                         </p>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                            <div className="p-4 rounded-lg bg-slate-50 border border-slate-200/80 space-y-2">
-                                <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
-                                    <Landmark className="w-4 h-4 text-sky-600 shrink-0" />
-                                    <span>Financial Management</span>
-                                </div>
-                                <p className="text-xs text-slate-600">
-                                    Aligning project accounting structures with general ledger controls and enterprise compliance.
-                                </p>
-                            </div>
-
-                            <div className="p-4 rounded-lg bg-slate-50 border border-slate-200/80 space-y-2">
-                                <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
-                                    <Target className="w-4 h-4 text-sky-600 shrink-0" />
-                                    <span>Process Optimization</span>
-                                </div>
-                                <p className="text-xs text-slate-600">
-                                    Refining work breakdown structures, burdening rules, and milestone billing workflows.
-                                </p>
-                            </div>
-                        </div>
                     </motion.div>
 
                     {/* Right Highlight Graphic Card */}
@@ -82,10 +60,6 @@ export const WhoWeAre: React.FC = () => {
                             <li className="flex items-start gap-3">
                                 <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
                                 <span>Specialized functional advisory centered entirely on Oracle PPM Cloud modules.</span>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
-                                <span>Rigorous emphasis on project financial controls, rate structures, and revenue accounting.</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />

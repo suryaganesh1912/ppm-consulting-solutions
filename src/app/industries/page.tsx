@@ -24,7 +24,7 @@ export default function IndustriesPage() {
                     title="Discuss Your Industry Requirements"
                     text="Explore how Oracle PPM Cloud solutions can align with your sector-specific financial accounting, project costing, billing, and reporting needs."
                     buttonText="Contact Us"
-                    buttonHref="/#contact"
+                    buttonHref="/contact"
                 />
             </main>
 

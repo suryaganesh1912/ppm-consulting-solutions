@@ -87,7 +87,7 @@ export const IndustryCard: React.FC<IndustryCardProps> = ({
             {/* CTA Button */}
             <div className="mt-8 pt-4 border-t border-slate-100">
                 <Button
-                    href="/#contact"
+                    href="/contact"
                     variant="secondary"
                     size="sm"
                     fullWidth

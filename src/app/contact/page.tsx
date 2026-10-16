@@ -44,9 +44,6 @@ export default function ContactPage() {
                         {/* Unified Contact Panel */}
                         <div className="space-y-6">
                             <div className="text-center">
-                                <h2 className="text-xs font-bold uppercase tracking-widest text-sky-400 mb-1">
-                                    Direct Practice Channels
-                                </h2>
                                 <p className="text-sm text-slate-400">
                                     Official contact details for our consulting practice
                                 </p>
@@ -68,13 +65,13 @@ export default function ContactPage() {
                                 </p>
                             </div>
                             <div className="pt-2">
-                                <a
-                                    href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("Oracle PPM Consulting Enquiry")}`}
-                                    className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-sky-600 text-white font-bold text-sm hover:bg-sky-500 transition-colors shadow-lg shadow-sky-600/25"
+                                <button
+                                    type="button"
+                                    className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-sky-600 text-white font-bold text-sm hover:bg-sky-500 transition-colors shadow-lg shadow-sky-600/25 cursor-pointer"
                                 >
                                     <Mail className="w-4 h-4" />
                                     <span>Email Our Team</span>
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </div>

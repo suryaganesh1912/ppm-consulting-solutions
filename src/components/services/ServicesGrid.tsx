@@ -8,9 +8,7 @@ import { SectionHeading } from "../ui/SectionHeading";
 const categories = [
     "All Services",
     "Advisory & Strategy",
-    "Financials & Costing",
-    "Planning & Control",
-    "Technical & Managed Services",
+    "Implementation & Managed Services",
 ] as const;
 
 export const ServicesGrid: React.FC = () => {
@@ -28,7 +26,7 @@ export const ServicesGrid: React.FC = () => {
                 <SectionHeading
                     tagline="Comprehensive Offerings"
                     title="Oracle PPM Service Capabilities"
-                    description="Explore our 14 specialized consulting, implementation, accounting, and technical support services."
+                    description="Explore our specialized Oracle PPM consulting, implementation, data migration, and managed support services."
                     align="center"
                     theme="light"
                 />

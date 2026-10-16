@@ -11,11 +11,11 @@ export const siteConfig = {
     tagline: "Enterprise Oracle PPM Strategy & Consulting Services",
     contactPerson: "PPM Consulting Team",
     // Temporary demonstration email - replace before live deployment
-    email: "contact@example.com",
+    email: "ppmconsultingsolutions@gmail.com",
     // Temporary demonstration phone - replace before live deployment
-    phone: "+91 00000 00000",
-    phoneClean: "+910000000000",
-    location: "India",
+    phone: "+91 9603711949",
+    phoneClean: "+919603711949",
+    location: "Rajahmundry, Andhra Pradesh, India",
     addressSummary: "Oracle PPM Advisory & Implementation Practice, India",
     socialLinks: {
         linkedin: "https://linkedin.com/company/ppm-consulting-solutions",
