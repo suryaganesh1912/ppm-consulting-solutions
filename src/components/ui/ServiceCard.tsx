@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { ArrowRight, LucideIcon } from "lucide-react";
 import { clsx } from "clsx";
 
@@ -12,8 +11,7 @@ interface ServiceCardProps {
     badge?: string;
     tag?: string;
     isPlaceholder?: boolean;
-    theme?: "light" | "dark" | "outlined";
-    delay?: number;
+    theme?: "auto" | "light" | "dark" | "outlined";
     className?: string;
     onClick?: () => void;
 }
@@ -24,111 +22,79 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
     icon: Icon,
     badge,
     tag,
-    isPlaceholder = false,
-    theme = "light",
-    delay = 0,
+    theme = "auto",
     className = "",
+    onClick,
 }) => {
-    const cardThemeClasses = {
-        light:
-            "bg-white border-slate-200/80 shadow-sm hover:shadow-xl hover:border-slate-300 hover:-translate-y-1 text-slate-900",
-        dark: "bg-navy-900/80 border-slate-800 shadow-md hover:border-sky-500/40 hover:shadow-sky-500/10 hover:-translate-y-1 text-white",
-        outlined:
-            "bg-slate-50/50 border-slate-200 hover:bg-white hover:shadow-md hover:border-slate-300 hover:-translate-y-1 text-slate-900",
-    }[theme];
+    const isExplicitDark = theme === "dark";
+
+    const cardClasses = isExplicitDark
+        ? "bg-slate-900 border-slate-800 text-white shadow-xs"
+        : "bg-surface border-theme text-color-primary shadow-xs hover:border-theme-strong";
 
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay }}
+        <div
+            onClick={onClick}
             className={clsx(
-                "group relative flex flex-col justify-between p-6 rounded-xl border transition-all duration-300",
-                cardThemeClasses,
+                "group relative flex flex-col justify-between p-5 sm:p-6 rounded-[8px] border transition-colors duration-150",
+                cardClasses,
+                onClick && "cursor-pointer",
                 className
             )}
         >
             <div>
-                {/* Header bar: Badge / Icon / Placeholder label */}
-                <div className="flex items-center justify-between gap-2 mb-4">
+                {/* Header bar: Badge / Icon */}
+                <div className="flex items-center justify-between gap-2 mb-3.5">
                     {Icon && (
                         <div
                             className={clsx(
-                                "w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-110",
-                                theme === "dark"
-                                    ? "bg-sky-500/10 text-sky-400 border border-sky-400/20 group-hover:bg-sky-500 group-hover:text-white"
-                                    : "bg-slate-100 text-slate-800 border border-slate-200 group-hover:bg-slate-900 group-hover:text-white group-hover:border-slate-900"
+                                "w-10 h-10 rounded-[6px] flex items-center justify-center border transition-colors shrink-0",
+                                isExplicitDark
+                                    ? "bg-slate-800 text-sky-400 border-slate-700"
+                                    : "bg-slate-100 dark:bg-slate-800/80 text-sky-700 dark:text-sky-400 border-theme"
                             )}
                         >
-                            <Icon className="w-6 h-6" />
+                            <Icon className="w-5 h-5" />
                         </div>
                     )}
 
                     {badge && (
                         <span
                             className={clsx(
-                                "text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full",
-                                theme === "dark"
-                                    ? "bg-slate-800 text-slate-300 border border-slate-700"
-                                    : "bg-slate-100 text-slate-600 border border-slate-200"
+                                "text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-[4px] border",
+                                isExplicitDark
+                                    ? "bg-slate-800 text-slate-300 border-slate-700"
+                                    : "bg-slate-100 dark:bg-slate-800 text-color-secondary border-theme"
                             )}
                         >
                             {badge}
-                        </span>
-                    )}
-
-                    {isPlaceholder && (
-                        <span className="text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-200">
-                            Sample Case Study
                         </span>
                     )}
                 </div>
 
                 {/* Tag line */}
                 {tag && (
-                    <span className="text-xs font-semibold text-sky-600 tracking-wide uppercase block mb-1">
+                    <span className="text-[11px] font-semibold text-sky-600 dark:text-sky-400 tracking-wider uppercase block mb-1">
                         {tag}
                     </span>
                 )}
 
                 {/* Title */}
-                <h3
-                    className={clsx(
-                        "text-lg font-bold tracking-tight mb-2 transition-colors",
-                        theme === "dark"
-                            ? "group-hover:text-sky-300"
-                            : "group-hover:text-slate-900"
-                    )}
-                >
+                <h3 className="text-base sm:text-lg font-bold tracking-tight mb-2 text-color-primary">
                     {title}
                 </h3>
 
                 {/* Description */}
-                <p
-                    className={clsx(
-                        "text-sm leading-relaxed",
-                        theme === "dark" ? "text-slate-300" : "text-slate-600"
-                    )}
-                >
+                <p className="text-xs sm:text-sm text-color-secondary leading-relaxed font-normal">
                     {description}
                 </p>
             </div>
 
             {/* Action Indicator */}
-            <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs font-semibold">
-                <span
-                    className={clsx(
-                        "inline-flex items-center gap-1.5 transition-all group-hover:gap-2.5",
-                        theme === "dark"
-                            ? "text-sky-400 group-hover:text-sky-300"
-                            : "text-slate-900 group-hover:text-sky-700"
-                    )}
-                >
-                    Explore Details
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                </span>
+            <div className="mt-5 pt-3.5 border-t border-theme-subtle flex items-center justify-between text-xs font-medium text-color-muted group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                <span>View practice details</span>
+                <ArrowRight className="w-3.5 h-3.5 opacity-70" />
             </div>
-        </motion.div>
+        </div>
     );
 };

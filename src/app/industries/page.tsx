@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function IndustriesPage() {
     return (
-        <div className="flex flex-col min-h-screen bg-white">
+        <div className="flex flex-col min-h-screen bg-canvas text-color-primary transition-colors">
             <Navbar />
 
             <main className="flex-grow">

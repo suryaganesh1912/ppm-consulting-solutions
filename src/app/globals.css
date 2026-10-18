@@ -2,27 +2,143 @@
 
 @layer base {
   :root {
-    --navy-950: #070e17;
-    --navy-900: #0b192c;
-    --navy-800: #132a47;
-    --navy-700: #1d3e66;
-    --navy-600: #2a568c;
-    --navy-500: #3b74b8;
+    color-scheme: light dark;
 
-    --blue-accent: #0284c7;
-    --blue-accent-hover: #0369a1;
-    --gold-accent: #d4af37;
+    /* 60% Foundation (Light Mode: Sophisticated warm slate, never pure #fff) */
+    --color-bg: #f8fafc;
+    --color-bg-subtle: #f1f5f9;
+    --color-surface: #ffffff;
+    --color-surface-elevated: #ffffff;
+    --color-surface-interactive: #e2e8f0;
 
-    --slate-50: #f8fafc;
-    --slate-100: #f1f5f9;
-    --slate-200: #e2e8f0;
-    --slate-300: #cbd5e1;
-    --slate-400: #94a3b8;
-    --slate-500: #64748b;
-    --slate-600: #475569;
-    --slate-700: #334155;
-    --slate-800: #1e293b;
-    --slate-900: #0f172a;
+    /* 30% Secondary & Structure */
+    --color-text-primary: #0f172a;
+    --color-text-secondary: #334155;
+    --color-text-muted: #64748b;
+    --color-text-inverse: #ffffff;
+
+    --color-border: #e2e8f0;
+    --color-border-subtle: #f1f5f9;
+    --color-border-strong: #cbd5e1;
+
+    /* 10% Brand & Semantic Accent */
+    --color-primary: #0284c7;
+    --color-primary-hover: #0369a1;
+    --color-primary-active: #075985;
+    --color-primary-soft: #f0f9ff;
+    --color-primary-border: #bae6fd;
+
+    --color-navy: #0b192c;
+    --color-navy-surface: #10233b;
+
+    --color-accent: #0f766e;
+    --color-accent-hover: #115e59;
+    --color-accent-soft: #f0fdf4;
+
+    --color-success: #059669;
+    --color-success-soft: #ecfdf5;
+    --color-warning: #d97706;
+    --color-warning-soft: #fffbeb;
+    --color-error: #dc2626;
+    --color-error-soft: #fef2f2;
+    --color-info: #0284c7;
+    --color-info-soft: #f0f9ff;
+
+    --color-focus: #0284c7;
+
+    /* Golden Ratio (φ ≈ 1.618) Typography Scale */
+    --font-size-xs: 0.75rem;     /* 12px */
+    --font-size-sm: 0.875rem;    /* 14px */
+    --font-size-base: 1rem;      /* 16px */
+    --font-size-md: 1.125rem;    /* 18px */
+    --font-size-lg: 1.25rem;     /* 20px */
+    --font-size-xl: 1.5rem;      /* 24px */
+    --font-size-2xl: 2rem;       /* 32px */
+    --font-size-3xl: clamp(2rem, 3.5vw, 2.75rem);
+    --font-size-display: clamp(2.5rem, 5vw, 3.5rem);
+
+    /* Spacing Scale */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+
+    /* Controlled Radius (No hyper-rounded pill bubbles) */
+    --radius-xs: 4px;
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-full: 9999px;
+
+    /* Architectural Shadow System */
+    --shadow-xs: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+    --shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.07), 0 1px 2px -1px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+    --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
+
+    /* Motion System */
+    --duration-fast: 150ms;
+    --duration-normal: 250ms;
+    --duration-slow: 400ms;
+    --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  }
+
+  [data-theme="dark"] {
+    /* 60% Foundation (Dark Mode: Deep rich slate charcoal, never pure #000) */
+    --color-bg: #090e17;
+    --color-bg-subtle: #0f1726;
+    --color-surface: #111a2b;
+    --color-surface-elevated: #162238;
+    --color-surface-interactive: #1d2d48;
+
+    /* 30% Secondary & Structure */
+    --color-text-primary: #f8fafc;
+    --color-text-secondary: #cbd5e1;
+    --color-text-muted: #94a3b8;
+    --color-text-inverse: #090e17;
+
+    --color-border: #1e2c42;
+    --color-border-subtle: #152033;
+    --color-border-strong: #2a3c5a;
+
+    /* 10% Brand & Semantic Accent */
+    --color-primary: #38bdf8;
+    --color-primary-hover: #0284c7;
+    --color-primary-active: #0369a1;
+    --color-primary-soft: rgba(56, 189, 248, 0.12);
+    --color-primary-border: rgba(56, 189, 248, 0.25);
+
+    --color-navy: #050a11;
+    --color-navy-surface: #0a1320;
+
+    --color-accent: #2dd4bf;
+    --color-accent-hover: #14b8a6;
+    --color-accent-soft: rgba(45, 212, 191, 0.12);
+
+    --color-success: #34d399;
+    --color-success-soft: rgba(52, 211, 153, 0.12);
+    --color-warning: #fbbf24;
+    --color-warning-soft: rgba(251, 191, 36, 0.12);
+    --color-error: #f87171;
+    --color-error-soft: rgba(248, 113, 113, 0.12);
+    --color-info: #38bdf8;
+    --color-info-soft: rgba(56, 189, 248, 0.12);
+
+    --color-focus: #38bdf8;
+
+    --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.35);
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.45), 0 1px 2px -1px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.55), 0 2px 4px -2px rgba(0, 0, 0, 0.45);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.65), 0 4px 6px -4px rgba(0, 0, 0, 0.45);
   }
 
   html {
@@ -31,45 +147,121 @@
   }
 
   body {
-    background-color: #ffffff;
-    color: var(--slate-900);
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
     font-family: var(--font-jakarta), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color var(--duration-normal) var(--ease-standard),
+                color var(--duration-normal) var(--ease-standard);
+  }
+
+  /* Accessible outline focus state */
+  :focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
   }
 }
 
-/* Custom corporate design system classes */
-.navy-gradient {
-  background: linear-gradient(135deg, #0b192c 0%, #132a47 60%, #1d3e66 100%);
+/* Reusable Semantic Surface Classes */
+.bg-canvas {
+  background-color: var(--color-bg);
 }
 
-.navy-gradient-dark {
-  background: linear-gradient(180deg, #070e17 0%, #0b192c 100%);
+.bg-canvas-subtle {
+  background-color: var(--color-bg-subtle);
 }
 
-.hero-glow {
-  background: radial-gradient(circle at 50% 30%, rgba(2, 132, 199, 0.15) 0%, rgba(11, 25, 44, 0) 70%);
+.bg-surface {
+  background-color: var(--color-surface);
 }
 
-.card-glass {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(226, 232, 240, 0.8);
+.bg-surface-elevated {
+  background-color: var(--color-surface-elevated);
 }
 
-.dark-card-glass {
-  background: rgba(19, 42, 71, 0.6);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+.bg-surface-interactive {
+  background-color: var(--color-surface-interactive);
 }
 
+.text-color-primary {
+  color: var(--color-text-primary);
+}
+
+.text-color-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-color-muted {
+  color: var(--color-text-muted);
+}
+
+.border-theme {
+  border-color: var(--color-border);
+}
+
+.border-theme-subtle {
+  border-color: var(--color-border-subtle);
+}
+
+.border-theme-strong {
+  border-color: var(--color-border-strong);
+}
+
+/* Subtle architectural borders & cards */
+.corporate-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--duration-fast) var(--ease-standard),
+              box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+.corporate-card:hover {
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-md);
+}
+
+/* Subtle header navy band */
+.navy-header-band {
+  background-color: var(--color-navy);
+  color: #f8fafc;
+}
+
+/* Skeleton loader animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-box {
+  background: linear-gradient(
+    90deg,
+    var(--color-border-subtle) 25%,
+    var(--color-surface-interactive) 50%,
+    var(--color-border-subtle) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite ease-in-out;
+  border-radius: var(--radius-sm);
+}
+
+/* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  .skeleton-box {
+    animation: none;
+    background-color: var(--color-border);
   }
 }

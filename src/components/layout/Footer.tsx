@@ -15,88 +15,104 @@ export const Footer: React.FC = () => {
                     {/* Brand Info */}
                     <div className="lg:col-span-2 space-y-4">
                         <Logo size="md" variant="light" />
-                        <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
-                            Specialized Oracle Project Portfolio Management (Oracle PPM) consulting firm empowering organizations to optimize project financial management, project costing, billing, planning, and reporting.
+                        <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
+                            Specialized enterprise consulting practice empowering organizations to optimize Oracle Project Portfolio Management (Oracle PPM), project financial costing, contract billing, planning controls, and real-time executive reporting.
                         </p>
                         <div className="pt-2 flex flex-col space-y-2 text-xs text-slate-400">
                             <div className="flex items-center gap-2">
                                 <ShieldCheck className="w-4 h-4 text-sky-400 shrink-0" />
-                                <span>Oracle PPM Advisory & Implementation Practice ({siteConfig.location})</span>
+                                <span>Oracle PPM Practice & Advisory ({siteConfig.location})</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <Mail className="w-4 h-4 text-sky-400 shrink-0" />
-                                <a href={`mailto:${siteConfig.email}`} className="hover:text-white transition-colors underline">
+                                <a
+                                    href={`mailto:${siteConfig.email}`}
+                                    className="hover:text-white transition-colors underline focus:outline-none focus-visible:ring-1 focus-visible:ring-sky-400"
+                                >
                                     {siteConfig.email}
                                 </a>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Phone className="w-4 h-4 text-sky-400 shrink-0" />
+                                <a
+                                    href={`tel:${siteConfig.phoneClean}`}
+                                    className="hover:text-white transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-sky-400"
+                                >
+                                    {siteConfig.phone}
+                                </a>
+                            </div>
+                            <div className="flex items-start gap-2">
+                                <MapPin className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
+                                <span>{siteConfig.addressSummary}</span>
                             </div>
                         </div>
                     </div>
 
-                    {/* Quick Links */}
-                    <div className="space-y-4">
-                        <h3 className="text-sm font-bold text-white uppercase tracking-wider">
+                    {/* Navigation Links */}
+                    <div className="space-y-3.5">
+                        <h3 className="text-xs font-bold text-white uppercase tracking-wider">
                             Navigation
                         </h3>
-                        <ul className="space-y-2.5 text-sm">
+                        <ul className="space-y-2 text-xs sm:text-sm">
                             {navLinks.map((link) => (
                                 <li key={link.name}>
                                     <Link
                                         href={link.href}
-                                        className="text-slate-400 hover:text-white transition-colors inline-flex items-center gap-1 group"
+                                        className="text-slate-400 hover:text-white transition-colors inline-flex items-center gap-1 group focus:outline-none focus-visible:ring-1 focus-visible:ring-sky-400"
                                     >
                                         <span>{link.name}</span>
-                                        <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-sky-400" />
+                                        <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-sky-400" />
                                     </Link>
                                 </li>
                             ))}
                         </ul>
                     </div>
 
-                    {/* Core Oracle PPM Modules */}
-                    <div className="space-y-4">
-                        <h3 className="text-sm font-bold text-white uppercase tracking-wider">
+                    {/* Core Practice Modules */}
+                    <div className="space-y-3.5">
+                        <h3 className="text-xs font-bold text-white uppercase tracking-wider">
                             Oracle PPM Practice
                         </h3>
-                        <ul className="space-y-2.5 text-sm text-slate-400">
+                        <ul className="space-y-2 text-xs sm:text-sm text-slate-400">
                             <li>
-                                <Link href="/#oracle-ppm" className="hover:text-white transition-colors">
-                                    Project Foundation
+                                <Link href="/oracle-ppm" className="hover:text-white transition-colors">
+                                    Project Execution Management
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/#oracle-ppm" className="hover:text-white transition-colors">
-                                    Project Financial Costing
+                                <Link href="/oracle-ppm" className="hover:text-white transition-colors">
+                                    Project Costing & Subledgers
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/#oracle-ppm" className="hover:text-white transition-colors">
-                                    Project Billing & Contracts
+                                <Link href="/oracle-ppm" className="hover:text-white transition-colors">
+                                    Project Billing & Revenue
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/#oracle-ppm" className="hover:text-white transition-colors">
-                                    Project Planning & Control
+                                <Link href="/oracle-ppm" className="hover:text-white transition-colors">
+                                    Resource Management & Capacity
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/#oracle-ppm" className="hover:text-white transition-colors">
-                                    Resource Management
+                                <Link href="/services" className="hover:text-white transition-colors">
+                                    Cloud Migration & FBDI
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/#oracle-ppm" className="hover:text-white transition-colors">
-                                    Reporting & Analytics
+                                <Link href="/services" className="hover:text-white transition-colors">
+                                    Managed Support & Releases
                                 </Link>
                             </li>
                         </ul>
                     </div>
 
-                    {/* Legal & Compliance */}
-                    <div className="space-y-4">
-                        <h3 className="text-sm font-bold text-white uppercase tracking-wider">
-                            Legal & Trust
+                    {/* Legal & Governance */}
+                    <div className="space-y-3.5">
+                        <h3 className="text-xs font-bold text-white uppercase tracking-wider">
+                            Legal & Compliance
                         </h3>
-                        <ul className="space-y-2.5 text-sm text-slate-400">
+                        <ul className="space-y-2 text-xs sm:text-sm text-slate-400">
                             <li>
                                 <Link href="/privacy" className="hover:text-white transition-colors">
                                     Privacy Policy
@@ -108,24 +124,24 @@ export const Footer: React.FC = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="#security" className="hover:text-white transition-colors">
-                                    Data Security & Governance
+                                <Link href="/about" className="hover:text-white transition-colors">
+                                    Our Methodology
                                 </Link>
                             </li>
                             <li>
-                                <Link href="#cookie-policy" className="hover:text-white transition-colors">
-                                    Cookie Policy
+                                <Link href="/contact" className="hover:text-white transition-colors">
+                                    Enterprise Inquiries
                                 </Link>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                {/* Bottom copyright */}
+                {/* Bottom Bar */}
                 <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
                     <p>© 2026 PPM CONSULTING SOLUTIONS. All rights reserved.</p>
                     <p className="text-slate-500">
-                        Enterprise Oracle PPM Strategy & Consulting Services
+                        Enterprise Oracle PPM Advisory, Implementation & Optimization
                     </p>
                 </div>
             </div>

@@ -1,5 +1,4 @@
-import React from "react";
-import { CheckCircle2, MessageSquare, Calendar, Rocket, Shield } from "lucide-react";
+import { MessageSquare, Calendar, Rocket, Shield } from "lucide-react";
 import { siteConfig } from "@/data/config";
 
 export const ContactNextSteps: React.FC = () => {

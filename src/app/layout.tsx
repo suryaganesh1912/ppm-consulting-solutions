@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
@@ -6,12 +6,18 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-jakarta",
   weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
-  title: "PPM CONSULTING SOLUTIONS | Oracle PPM Consulting & Solutions",
+  title: "PPM CONSULTING SOLUTIONS | Oracle PPM Consulting & Financial Architecture",
   description:
-    "Transforming project management with specialized Oracle Project Portfolio Management (Oracle PPM) consulting, implementation, project financial management, costing, billing, planning, and reporting.",
+    "Enterprise Oracle Project Portfolio Management (Oracle PPM) advisory, Cloud implementation, project costing, contract billing, financial controls, and integration support.",
   keywords: [
     "Oracle PPM",
     "Oracle Project Portfolio Management",
@@ -30,8 +36,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${plusJakartaSans.variable} scroll-smooth`}>
-      <body className="min-h-screen flex flex-col bg-white text-slate-900 font-sans antialiased selection:bg-sky-500 selection:text-white">
+    <html lang="en" className={`${plusJakartaSans.variable} scroll-smooth`} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var stored = localStorage.getItem('ppm-theme');
+                  var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                  document.documentElement.setAttribute('data-theme', theme);
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body className="min-h-screen flex flex-col bg-canvas text-color-primary font-sans antialiased selection:bg-sky-600 selection:text-white">
         {children}
       </body>
     </html>

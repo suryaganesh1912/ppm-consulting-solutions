@@ -1,49 +1,40 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { careerPillars } from "@/data/careersData";
+import { SectionHeading } from "../ui/SectionHeading";
 
 export const WhyWorkWithUs: React.FC = () => {
     return (
-        <section className="py-16 md:py-24 bg-white text-slate-900 border-b border-slate-200">
+        <section className="py-16 md:py-20 bg-canvas border-b border-theme transition-colors">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-                <div className="text-center max-w-2xl mx-auto space-y-2">
-                    <span className="text-xs font-bold text-sky-600 uppercase tracking-wider">
-                        Practice Excellence
-                    </span>
-                    <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
-                        Why Build Your Career Here?
-                    </h2>
-                    <p className="text-xs sm:text-sm text-slate-600">
-                        We foster an environment dedicated to technical mastery, career trajectory advancement, and enterprise consulting excellence.
-                    </p>
-                </div>
+                <SectionHeading
+                    tagline="Practice Culture"
+                    title="Why Build Your Career Here?"
+                    description="We foster an environment dedicated to technical mastery, career trajectory advancement, and enterprise consulting excellence."
+                    align="center"
+                />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {careerPillars.map((pillar, index) => {
+                    {careerPillars.map((pillar) => {
                         const Icon = pillar.icon;
                         return (
-                            <motion.div
+                            <div
                                 key={pillar.title}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.4, delay: index * 0.1 }}
-                                className="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-sky-500/50 hover:shadow-lg transition-all space-y-4 flex flex-col justify-between"
+                                className="bg-surface rounded-[10px] p-6 border border-theme hover:border-theme-strong shadow-xs transition-colors space-y-3.5 flex flex-col justify-between"
                             >
                                 <div className="space-y-3">
-                                    <div className="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-600 flex items-center justify-center font-bold">
+                                    <div className="w-10 h-10 rounded-[6px] bg-slate-100 dark:bg-slate-800 text-sky-700 dark:text-sky-400 border border-theme flex items-center justify-center font-bold">
                                         <Icon className="w-5 h-5" />
                                     </div>
-                                    <h3 className="text-lg font-bold text-slate-900">
+                                    <h3 className="text-base font-bold text-color-primary">
                                         {pillar.title}
                                     </h3>
-                                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                    <p className="text-xs sm:text-sm text-color-secondary leading-relaxed font-normal">
                                         {pillar.description}
                                     </p>
                                 </div>
-                            </motion.div>
+                            </div>
                         );
                     })}
                 </div>

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Button } from "../ui/Button";
-import { Send, Mail, User, Building, Phone, Briefcase, MessageSquare, CheckCircle2, AlertCircle, ExternalLink, RefreshCcw } from "lucide-react";
+import { Send, Mail, User, Building, Phone, Briefcase, CheckCircle2, AlertCircle, ExternalLink, RefreshCcw } from "lucide-react";
 import { siteConfig } from "@/data/config";
 
 const serviceOptions = [

@@ -2,9 +2,9 @@
 
 import React from "react";
 import Link from "next/link";
-import { motion, HTMLMotionProps } from "framer-motion";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { Loader2 } from "lucide-react";
 
 interface ButtonBaseProps {
     variant?: "primary" | "secondary" | "accent" | "ghost" | "outline-light";
@@ -12,12 +12,13 @@ interface ButtonBaseProps {
     icon?: React.ReactNode;
     iconPosition?: "left" | "right";
     fullWidth?: boolean;
+    loading?: boolean;
     className?: string;
     children: React.ReactNode;
 }
 
 type ButtonAsButton = ButtonBaseProps &
-    Omit<HTMLMotionProps<"button">, keyof ButtonBaseProps> & {
+    React.ButtonHTMLAttributes<HTMLButtonElement> & {
         href?: undefined;
     };
 
@@ -37,31 +38,33 @@ export const Button: React.FC<ButtonProps> = ({
     icon,
     iconPosition = "right",
     fullWidth = false,
+    loading = false,
     className = "",
     children,
     href,
+    disabled,
     ...props
 }) => {
     const baseStyles =
-        "inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed rounded-lg shadow-sm";
+        "inline-flex items-center justify-center font-medium transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer select-none";
 
     const sizeStyles = {
-        sm: "text-xs px-3.5 py-2 gap-1.5 rounded-md",
-        md: "text-sm px-5 py-2.5 gap-2 rounded-lg",
-        lg: "text-base px-6.5 py-3.5 gap-2.5 rounded-lg font-bold",
+        sm: "text-xs px-3.5 py-1.5 gap-1.5 rounded-[6px]",
+        md: "text-sm px-4.5 py-2.25 gap-2 rounded-[8px]",
+        lg: "text-base px-6 py-3 gap-2.5 rounded-[8px] font-semibold",
     }[size];
 
     const variantStyles = {
         primary:
-            "bg-slate-900 text-white hover:bg-slate-800 border border-slate-800 shadow-slate-900/10 active:bg-slate-950",
+            "bg-slate-900 text-white hover:bg-slate-800 dark:bg-sky-600 dark:text-white dark:hover:bg-sky-500 border border-slate-900 dark:border-sky-600 shadow-sm",
         secondary:
-            "bg-white text-slate-800 hover:bg-slate-50 border border-slate-300 shadow-slate-200/50 hover:border-slate-400 active:bg-slate-100",
+            "bg-surface text-color-primary hover:bg-slate-100 dark:hover:bg-slate-800 border border-theme hover:border-theme-strong shadow-xs",
         accent:
-            "bg-sky-600 text-white hover:bg-sky-700 border border-sky-600 shadow-sky-600/20 active:bg-sky-800",
+            "bg-sky-600 text-white hover:bg-sky-700 border border-sky-600 shadow-sm dark:bg-sky-500 dark:hover:bg-sky-600",
         ghost:
-            "bg-transparent text-slate-700 hover:bg-slate-100 hover:text-slate-900 border border-transparent shadow-none",
+            "bg-transparent text-color-primary hover:bg-slate-100 dark:hover:bg-slate-800 border border-transparent shadow-none",
         "outline-light":
-            "bg-transparent text-white border border-white/30 hover:bg-white/10 hover:border-white/60 shadow-none",
+            "bg-transparent text-white border border-white/25 hover:bg-white/10 hover:border-white/50 shadow-none",
     }[variant];
 
     const combinedClasses = twMerge(
@@ -76,37 +79,43 @@ export const Button: React.FC<ButtonProps> = ({
 
     const content = (
         <>
-            {icon && iconPosition === "left" && (
-                <span className="shrink-0">{icon}</span>
+            {loading ? (
+                <Loader2 className="w-4 h-4 animate-spin shrink-0" />
+            ) : (
+                icon && iconPosition === "left" && <span className="shrink-0">{icon}</span>
             )}
             <span>{children}</span>
-            {icon && iconPosition === "right" && (
-                <span className="shrink-0 transition-transform group-hover:translate-x-0.5">
-                    {icon}
-                </span>
+            {!loading && icon && iconPosition === "right" && (
+                <span className="shrink-0">{icon}</span>
             )}
         </>
     );
 
     if (href) {
-        const { href: _h, disabled, ...linkProps } = props as ButtonAsLink;
+        const linkProps = props as React.AnchorHTMLAttributes<HTMLAnchorElement>;
         return (
-            <Link href={href} className={combinedClasses} {...linkProps}>
+            <Link
+                href={href}
+                className={clsx(combinedClasses, disabled && "pointer-events-none opacity-50")}
+                aria-disabled={disabled}
+                tabIndex={disabled ? -1 : undefined}
+                {...linkProps}
+            >
                 {content}
             </Link>
         );
     }
 
-    const motionProps = props as HTMLMotionProps<"button">;
+    const buttonProps = props as React.ButtonHTMLAttributes<HTMLButtonElement>;
 
     return (
-        <motion.button
-            whileHover={{ y: -1 }}
-            whileTap={{ scale: 0.98 }}
+        <button
+            type="button"
             className={combinedClasses}
-            {...motionProps}
+            disabled={disabled || loading}
+            {...buttonProps}
         >
             {content}
-        </motion.button>
+        </button>
     );
 };

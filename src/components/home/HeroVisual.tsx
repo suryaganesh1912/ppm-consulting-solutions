@@ -1,149 +1,178 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
 import {
-    PieChart,
-    Layers,
-    TrendingUp,
     Shield,
-    Zap,
-    CheckCircle2,
-    Database,
-    BarChart3,
-    DollarSign,
+    Check,
+    Cpu,
 } from "lucide-react";
 
+type ActiveTab = "costing" | "billing" | "portfolio";
+
 export const HeroVisual: React.FC = () => {
+    const [activeTab, setActiveTab] = useState<ActiveTab>("costing");
+
     return (
-        <div className="relative w-full max-w-xl lg:max-w-none mx-auto aspect-square sm:aspect-[4/3] lg:aspect-[1.1/1] flex items-center justify-center p-4">
-            {/* Background Ambient Glow */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-sky-500/10 via-navy-900/5 to-sky-400/15 rounded-3xl blur-2xl" />
-
-            {/* Main Container Card - Dark Corporate Slate / Navy Theme */}
-            <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="relative w-full h-full rounded-2xl bg-gradient-to-b from-slate-900 via-navy-900 to-slate-950 border border-slate-800 p-6 md:p-8 shadow-2xl flex flex-col justify-between overflow-hidden"
-            >
-                {/* Decorative Grid Lines */}
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:24px_24px]" />
-
-                {/* Top Bar - Enterprise System Header */}
-                <div className="relative z-10 flex items-center justify-between pb-4 border-b border-slate-800">
-                    <div className="flex items-center gap-3">
-                        <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
-                        <div className="flex flex-col">
-                            <span className="text-xs font-bold text-white tracking-wide">
-                                ORACLE PPM ENTERPRISE ARCHITECTURE
-                            </span>
-                            <span className="text-[10px] text-slate-400">
-                                Financial Management & Portfolio Control System
-                            </span>
-                        </div>
-                    </div>
-                    <span className="text-[10px] font-mono px-2 py-1 rounded bg-sky-500/10 text-sky-400 border border-sky-500/20 font-semibold">
-                        CLOUD READY
+        <div className="w-full max-w-xl mx-auto rounded-[12px] bg-slate-900 text-slate-100 border border-slate-800 shadow-md p-5 sm:p-6 space-y-4">
+            {/* System Title Bar */}
+            <div className="flex items-center justify-between pb-3 border-b border-slate-800 text-xs">
+                <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
+                    <span className="font-bold text-white tracking-wide uppercase text-[11px]">
+                        Oracle PPM Financial Architecture
                     </span>
                 </div>
-
-                {/* Center Dynamic Nodes Graphic */}
-                <div className="relative z-10 my-auto py-4 grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
-                    {/* Node 1: Project Financials */}
-                    <motion.div
-                        whileHover={{ y: -2 }}
-                        className="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700/60 backdrop-blur-sm space-y-2 group hover:border-sky-500/50 transition-colors"
-                    >
-                        <div className="flex items-center justify-between">
-                            <div className="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center">
-                                <DollarSign className="w-4 h-4" />
-                            </div>
-                            <span className="text-[9px] text-emerald-400 font-mono font-semibold">
-                                ACTIVE
-                            </span>
-                        </div>
-                        <div>
-                            <p className="text-xs font-bold text-white">Project Costing</p>
-                            <p className="text-[10px] text-slate-400">Financial Ledger Sync</p>
-                        </div>
-                    </motion.div>
-
-                    {/* Node 2: Billing & Revenue */}
-                    <motion.div
-                        whileHover={{ y: -2 }}
-                        className="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700/60 backdrop-blur-sm space-y-2 group hover:border-sky-500/50 transition-colors"
-                    >
-                        <div className="flex items-center justify-between">
-                            <div className="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
-                                <TrendingUp className="w-4 h-4" />
-                            </div>
-                            <span className="text-[9px] text-sky-400 font-mono font-semibold">
-                                AUTOMATED
-                            </span>
-                        </div>
-                        <div>
-                            <p className="text-xs font-bold text-white">Project Billing</p>
-                            <p className="text-[10px] text-slate-400">Contract Revenue</p>
-                        </div>
-                    </motion.div>
-
-                    {/* Node 3: Resource Management */}
-                    <motion.div
-                        whileHover={{ y: -2 }}
-                        className="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700/60 backdrop-blur-sm space-y-2 group hover:border-sky-500/50 transition-colors col-span-2 sm:col-span-1"
-                    >
-                        <div className="flex items-center justify-between">
-                            <div className="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center">
-                                <Layers className="w-4 h-4" />
-                            </div>
-                            <span className="text-[9px] text-amber-400 font-mono font-semibold">
-                                BALANCED
-                            </span>
-                        </div>
-                        <div>
-                            <p className="text-xs font-bold text-white">Resource Mgmt</p>
-                            <p className="text-[10px] text-slate-400">Workforce Planning</p>
-                        </div>
-                    </motion.div>
-
-                    {/* Node 4: Performance Analytics */}
-                    <motion.div
-                        whileHover={{ y: -2 }}
-                        className="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700/60 backdrop-blur-sm space-y-2 group hover:border-sky-500/50 transition-colors col-span-2 sm:col-span-3"
-                    >
-                        <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-2">
-                                <div className="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center">
-                                    <BarChart3 className="w-4 h-4" />
-                                </div>
-                                <div>
-                                    <p className="text-xs font-bold text-white">
-                                        Oracle PPM Executive Analytics & Reporting
-                                    </p>
-                                    <p className="text-[10px] text-slate-400">
-                                        Real-time Portfolio Visibility & Profitability Tracking
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="flex items-center gap-1">
-                                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                            </div>
-                        </div>
-                    </motion.div>
+                <div className="flex items-center gap-1.5 font-mono text-[10px] text-sky-400 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700">
+                    <Cpu className="w-3 h-3" />
+                    <span>CLOUD FUSION v24</span>
                 </div>
+            </div>
 
-                {/* Bottom Status Ribbon */}
-                <div className="relative z-10 pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-400">
-                    <div className="flex items-center gap-2">
-                        <Shield className="w-3.5 h-3.5 text-sky-400" />
-                        <span>End-to-End Oracle PPM Governance</span>
+            {/* Interactive Workflow Tabs */}
+            <div className="grid grid-cols-3 gap-1 bg-slate-950 p-1 rounded-[6px] border border-slate-800 text-xs font-medium">
+                <button
+                    type="button"
+                    onClick={() => setActiveTab("costing")}
+                    className={`py-1.5 px-2 rounded-[4px] transition-colors cursor-pointer text-center text-[11px] ${
+                        activeTab === "costing"
+                            ? "bg-slate-800 text-sky-400 font-semibold shadow-xs"
+                            : "text-slate-400 hover:text-white"
+                    }`}
+                >
+                    Project Costing
+                </button>
+                <button
+                    type="button"
+                    onClick={() => setActiveTab("billing")}
+                    className={`py-1.5 px-2 rounded-[4px] transition-colors cursor-pointer text-center text-[11px] ${
+                        activeTab === "billing"
+                            ? "bg-slate-800 text-sky-400 font-semibold shadow-xs"
+                            : "text-slate-400 hover:text-white"
+                    }`}
+                >
+                    Contract Billing
+                </button>
+                <button
+                    type="button"
+                    onClick={() => setActiveTab("portfolio")}
+                    className={`py-1.5 px-2 rounded-[4px] transition-colors cursor-pointer text-center text-[11px] ${
+                        activeTab === "portfolio"
+                            ? "bg-slate-800 text-sky-400 font-semibold shadow-xs"
+                            : "text-slate-400 hover:text-white"
+                    }`}
+                >
+                    Financial Controls
+                </button>
+            </div>
+
+            {/* Dynamic Interactive Panel */}
+            <div className="space-y-3 pt-1">
+                {activeTab === "costing" && (
+                    <div className="space-y-2.5">
+                        <div className="flex items-center justify-between text-xs text-slate-400">
+                            <span>Subledger Distribution Flow</span>
+                            <span className="text-emerald-400 font-mono text-[10px]">BALANCED</span>
+                        </div>
+                        <div className="grid grid-cols-2 gap-2 text-xs">
+                            <div className="bg-slate-800/80 p-3 rounded-[6px] border border-slate-700/70 space-y-1">
+                                <div className="text-[10px] text-slate-400 uppercase font-semibold">Raw Expenditures</div>
+                                <div className="text-base font-bold text-white font-mono">$1,428,500</div>
+                                <div className="text-[10px] text-sky-400">Labor & Procurement sync</div>
+                            </div>
+                            <div className="bg-slate-800/80 p-3 rounded-[6px] border border-slate-700/70 space-y-1">
+                                <div className="text-[10px] text-slate-400 uppercase font-semibold">Burdened CapEx / WIP</div>
+                                <div className="text-base font-bold text-emerald-400 font-mono">$1,895,300</div>
+                                <div className="text-[10px] text-slate-400">Overhead schedules applied</div>
+                            </div>
+                        </div>
+
+                        {/* Workflow Audit Trail */}
+                        <div className="bg-slate-950 p-3 rounded-[6px] border border-slate-800 text-[11px] space-y-1.5">
+                            <div className="text-slate-300 font-semibold flex items-center justify-between">
+                                <span>General Ledger Journal Posting</span>
+                                <span className="text-sky-400 font-mono text-[10px]">PPM-GL-SYNC</span>
+                            </div>
+                            <p className="text-slate-400 text-[10px] leading-relaxed">
+                                Automated cost distribution rules transform time cards and supplier invoices into project subledger journals with zero manual reconciliation lag.
+                            </p>
+                        </div>
                     </div>
-                    <span className="font-semibold text-slate-300">
-                        Process Optimization
-                    </span>
+                )}
+
+                {activeTab === "billing" && (
+                    <div className="space-y-2.5">
+                        <div className="flex items-center justify-between text-xs text-slate-400">
+                            <span>Enterprise Contract Revenue Pipeline</span>
+                            <span className="text-sky-400 font-mono text-[10px]">MULTI-CURRENCY</span>
+                        </div>
+                        <div className="grid grid-cols-2 gap-2 text-xs">
+                            <div className="bg-slate-800/80 p-3 rounded-[6px] border border-slate-700/70 space-y-1">
+                                <div className="text-[10px] text-slate-400 uppercase font-semibold">Invoiced to Date</div>
+                                <div className="text-base font-bold text-white font-mono">$3,150,000</div>
+                                <div className="text-[10px] text-emerald-400">Milestone approvals complete</div>
+                            </div>
+                            <div className="bg-slate-800/80 p-3 rounded-[6px] border border-slate-700/70 space-y-1">
+                                <div className="text-[10px] text-slate-400 uppercase font-semibold">Unbilled Revenue (WIP)</div>
+                                <div className="text-base font-bold text-amber-400 font-mono">$482,200</div>
+                                <div className="text-[10px] text-slate-400">Percent-complete method</div>
+                            </div>
+                        </div>
+
+                        <div className="bg-slate-950 p-3 rounded-[6px] border border-slate-800 text-[11px] space-y-1.5">
+                            <div className="text-slate-300 font-semibold flex items-center justify-between">
+                                <span>Oracle Receivables (AR) Transfer</span>
+                                <span className="text-sky-400 font-mono text-[10px]">AUTO-INVOICE</span>
+                            </div>
+                            <p className="text-slate-400 text-[10px] leading-relaxed">
+                                Configured billing schedules aggregate eligible project transactions and generate compliant customer invoices matching complex contractual terms.
+                            </p>
+                        </div>
+                    </div>
+                )}
+
+                {activeTab === "portfolio" && (
+                    <div className="space-y-2.5">
+                        <div className="flex items-center justify-between text-xs text-slate-400">
+                            <span>Portfolio Governance & Variance Analysis</span>
+                            <span className="text-emerald-400 font-mono text-[10px]">HEALTHY</span>
+                        </div>
+                        <div className="grid grid-cols-2 gap-2 text-xs">
+                            <div className="bg-slate-800/80 p-3 rounded-[6px] border border-slate-700/70 space-y-1">
+                                <div className="text-[10px] text-slate-400 uppercase font-semibold">Cost Variance (CPI)</div>
+                                <div className="text-base font-bold text-emerald-400 font-mono">1.08</div>
+                                <div className="text-[10px] text-slate-400">Favorable cost efficiency</div>
+                            </div>
+                            <div className="bg-slate-800/80 p-3 rounded-[6px] border border-slate-700/70 space-y-1">
+                                <div className="text-[10px] text-slate-400 uppercase font-semibold">Schedule Variance (SPI)</div>
+                                <div className="text-base font-bold text-sky-400 font-mono">1.02</div>
+                                <div className="text-[10px] text-slate-400">Milestones tracking on schedule</div>
+                            </div>
+                        </div>
+
+                        <div className="bg-slate-950 p-3 rounded-[6px] border border-slate-800 text-[11px] space-y-1.5">
+                            <div className="text-slate-300 font-semibold flex items-center justify-between">
+                                <span>Executive OTBI Analytics</span>
+                                <span className="text-sky-400 font-mono text-[10px]">REAL-TIME</span>
+                            </div>
+                            <p className="text-slate-400 text-[10px] leading-relaxed">
+                                Unified visibility across organizational portfolios delivers granular drill-down into task-level expenditures, budget revisions, and margin forecasts.
+                            </p>
+                        </div>
+                    </div>
+                )}
+            </div>
+
+            {/* Bottom Status Ribbon */}
+            <div className="pt-2 border-t border-slate-800 flex items-center justify-between text-[10px] text-slate-400">
+                <div className="flex items-center gap-1.5">
+                    <Shield className="w-3 h-3 text-sky-400" />
+                    <span>Oracle Cloud Project Financials Engine</span>
                 </div>
-            </motion.div>
+                <div className="flex items-center gap-1 text-slate-300 font-mono">
+                    <Check className="w-3 h-3 text-emerald-400" />
+                    <span>Audited Control</span>
+                </div>
+            </div>
         </div>
     );
 };

@@ -1,5 +1,4 @@
-import React from "react";
-import { Mail, Phone, MapPin, Users, Clock, ShieldCheck } from "lucide-react";
+import { Mail, Phone, MapPin, ShieldCheck } from "lucide-react";
 import { siteConfig } from "@/data/config";
 
 export const ContactInfoCards: React.FC = () => {
