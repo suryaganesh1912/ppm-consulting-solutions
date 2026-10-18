@@ -29,8 +29,8 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
     const isExplicitDark = theme === "dark";
 
     const cardClasses = isExplicitDark
-        ? "bg-slate-900 border-slate-800 text-white shadow-xs"
-        : "bg-surface border-theme text-color-primary shadow-xs hover:border-theme-strong";
+        ? "bg-[#242424] border-[#3D3D3D] text-white shadow-xs"
+        : "bg-surface border-theme text-color-primary shadow-xs hover:border-[#F80000]/60";
 
     return (
         <div
@@ -50,8 +50,8 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
                             className={clsx(
                                 "w-10 h-10 rounded-[6px] flex items-center justify-center border transition-colors shrink-0",
                                 isExplicitDark
-                                    ? "bg-slate-800 text-sky-400 border-slate-700"
-                                    : "bg-slate-100 dark:bg-slate-800/80 text-sky-700 dark:text-sky-400 border-theme"
+                                    ? "bg-[#333333] text-[#00A3C4] border-[#444444]"
+                                    : "bg-[#E5E5E5]/50 dark:bg-[#333333] text-[#00758F] dark:text-[#00A3C4] border-theme"
                             )}
                         >
                             <Icon className="w-5 h-5" />
@@ -61,10 +61,10 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
                     {badge && (
                         <span
                             className={clsx(
-                                "text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-[4px] border",
+                                "text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-[4px] border",
                                 isExplicitDark
-                                    ? "bg-slate-800 text-slate-300 border-slate-700"
-                                    : "bg-slate-100 dark:bg-slate-800 text-color-secondary border-theme"
+                                    ? "bg-[#333333] text-[#E5E5E5] border-[#444444]"
+                                    : "bg-[#E5E5E5]/50 dark:bg-[#333333] text-color-secondary border-theme"
                             )}
                         >
                             {badge}
@@ -74,13 +74,13 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
 
                 {/* Tag line */}
                 {tag && (
-                    <span className="text-[11px] font-semibold text-sky-600 dark:text-sky-400 tracking-wider uppercase block mb-1">
+                    <span className="text-[11px] font-bold text-[#00758F] dark:text-[#00A3C4] tracking-wider uppercase block mb-1">
                         {tag}
                     </span>
                 )}
 
                 {/* Title */}
-                <h3 className="text-base sm:text-lg font-bold tracking-tight mb-2 text-color-primary">
+                <h3 className="text-base sm:text-lg font-bold tracking-tight mb-2 text-color-primary group-hover:text-[#F80000] transition-colors">
                     {title}
                 </h3>
 
@@ -91,7 +91,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
             </div>
 
             {/* Action Indicator */}
-            <div className="mt-5 pt-3.5 border-t border-theme-subtle flex items-center justify-between text-xs font-medium text-color-muted group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+            <div className="mt-5 pt-3.5 border-t border-theme-subtle flex items-center justify-between text-xs font-bold text-color-muted group-hover:text-[#F80000] transition-colors">
                 <span>View practice details</span>
                 <ArrowRight className="w-3.5 h-3.5 opacity-70" />
             </div>

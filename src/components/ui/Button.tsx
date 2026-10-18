@@ -7,7 +7,7 @@ import { twMerge } from "tailwind-merge";
 import { Loader2 } from "lucide-react";
 
 interface ButtonBaseProps {
-    variant?: "primary" | "secondary" | "accent" | "ghost" | "outline-light";
+    variant?: "primary" | "secondary" | "accent" | "ghost" | "outline-light" | "outline-red";
     size?: "sm" | "md" | "lg";
     icon?: React.ReactNode;
     iconPosition?: "left" | "right";
@@ -46,25 +46,27 @@ export const Button: React.FC<ButtonProps> = ({
     ...props
 }) => {
     const baseStyles =
-        "inline-flex items-center justify-center font-medium transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer select-none";
+        "inline-flex items-center justify-center font-bold tracking-tight transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F80000] focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer select-none";
 
     const sizeStyles = {
-        sm: "text-xs px-3.5 py-1.5 gap-1.5 rounded-[6px]",
+        sm: "text-xs px-3.5 py-1.75 gap-1.5 rounded-[6px]",
         md: "text-sm px-4.5 py-2.25 gap-2 rounded-[8px]",
-        lg: "text-base px-6 py-3 gap-2.5 rounded-[8px] font-semibold",
+        lg: "text-base px-6 py-3 gap-2.5 rounded-[8px]",
     }[size];
 
     const variantStyles = {
         primary:
-            "bg-slate-900 text-white hover:bg-slate-800 dark:bg-sky-600 dark:text-white dark:hover:bg-sky-500 border border-slate-900 dark:border-sky-600 shadow-sm",
+            "bg-[#F80000] text-white hover:bg-[#D60000] active:bg-[#B30000] border border-[#D60000] shadow-sm",
         secondary:
-            "bg-surface text-color-primary hover:bg-slate-100 dark:hover:bg-slate-800 border border-theme hover:border-theme-strong shadow-xs",
+            "bg-surface text-color-primary hover:bg-[#E5E5E5]/50 dark:hover:bg-[#3D3D3D] border border-theme hover:border-theme-strong shadow-xs font-semibold",
         accent:
-            "bg-sky-600 text-white hover:bg-sky-700 border border-sky-600 shadow-sm dark:bg-sky-500 dark:hover:bg-sky-600",
-        ghost:
-            "bg-transparent text-color-primary hover:bg-slate-100 dark:hover:bg-slate-800 border border-transparent shadow-none",
+            "bg-[#00758F] text-white hover:bg-[#005E73] dark:bg-[#00758F] dark:hover:bg-[#0092B3] border border-[#005E73] shadow-sm font-semibold",
+        "outline-red":
+            "bg-transparent text-[#F80000] border border-[#F80000]/50 hover:bg-[#F80000]/10 hover:border-[#F80000] shadow-none",
         "outline-light":
-            "bg-transparent text-white border border-white/25 hover:bg-white/10 hover:border-white/50 shadow-none",
+            "bg-transparent text-white border border-white/30 hover:bg-white/10 hover:border-white/60 shadow-none font-semibold",
+        ghost:
+            "bg-transparent text-color-primary hover:bg-[#E5E5E5]/40 dark:hover:bg-[#333333] border border-transparent shadow-none font-medium",
     }[variant];
 
     const combinedClasses = twMerge(

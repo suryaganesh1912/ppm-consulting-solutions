@@ -57,19 +57,19 @@ export const WhyChooseUsSection: React.FC = () => {
                         return (
                             <div
                                 key={pillar.title}
-                                className="p-6 sm:p-7 rounded-[10px] bg-surface border border-theme hover:border-theme-strong shadow-xs transition-colors space-y-4"
+                                className="p-6 sm:p-7 rounded-[10px] bg-surface border border-theme hover:border-[#F80000]/60 shadow-xs transition-colors space-y-4 group"
                             >
                                 <div className="flex items-center justify-between">
-                                    <div className="w-10 h-10 rounded-[6px] bg-slate-100 dark:bg-slate-800 text-sky-700 dark:text-sky-400 border border-theme flex items-center justify-center">
+                                    <div className="w-10 h-10 rounded-[6px] bg-[#E5E5E5]/50 dark:bg-[#333333] text-[#00758F] dark:text-[#00A3C4] border border-theme flex items-center justify-center">
                                         <Icon className="w-5 h-5" />
                                     </div>
-                                    <span className="text-[10px] font-mono font-semibold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/80 px-2 py-0.5 rounded border border-theme">
+                                    <span className="text-[10px] font-mono font-bold text-[#F80000] bg-[#F80000]/8 px-2.5 py-0.5 rounded border border-[#F80000]/25">
                                         {pillar.metric}
                                     </span>
                                 </div>
 
                                 <div className="space-y-1.5">
-                                    <h3 className="text-base sm:text-lg font-bold text-color-primary">
+                                    <h3 className="text-base sm:text-lg font-bold text-color-primary group-hover:text-[#F80000] transition-colors">
                                         {pillar.title}
                                     </h3>
                                     <p className="text-xs sm:text-sm text-color-secondary leading-relaxed font-normal">

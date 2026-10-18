@@ -26,7 +26,7 @@ export const ExampleRolesGrid: React.FC = () => {
                             <div className="space-y-3.5">
                                 {/* Badge & Experience */}
                                 <div className="flex items-center justify-between gap-2">
-                                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-[4px] bg-slate-100 dark:bg-slate-800 text-sky-700 dark:text-sky-400 text-[11px] font-mono font-semibold border border-theme">
+                                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-[4px] bg-[#E5E5E5]/50 dark:bg-[#333333] text-[#00758F] dark:text-[#00A3C4] text-[11px] font-mono font-semibold border border-theme">
                                         {role.badge}
                                     </span>
                                     <span className="text-[11px] font-mono text-color-muted">
@@ -35,10 +35,10 @@ export const ExampleRolesGrid: React.FC = () => {
                                 </div>
 
                                 <div>
-                                    <span className="text-[10px] font-bold text-sky-600 dark:text-sky-400 uppercase tracking-wider block">
+                                    <span className="text-[10px] font-bold text-[#00758F] dark:text-[#00A3C4] uppercase tracking-wider block">
                                         {role.category}
                                     </span>
-                                    <h3 className="text-base sm:text-lg font-bold text-color-primary group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors mt-0.5">
+                                    <h3 className="text-base sm:text-lg font-bold text-color-primary group-hover:text-[#F80000] transition-colors mt-0.5">
                                         {role.title}
                                     </h3>
                                 </div>
@@ -69,8 +69,12 @@ export const ExampleRolesGrid: React.FC = () => {
                             <div className="pt-3.5 border-t border-theme-subtle flex items-center justify-between text-xs text-color-muted">
                                 <span>Direct Application</span>
                                 <a
-                                    href="#resume-form"
-                                    className="inline-flex items-center gap-1 font-semibold text-sky-600 dark:text-sky-400 hover:underline transition-colors"
+                                    href={`#role-${role.id}`}
+                                    onClick={() => {
+                                        window.location.hash = `role-${role.id}`;
+                                        document.getElementById("resume-form")?.scrollIntoView({ behavior: "smooth" });
+                                    }}
+                                    className="inline-flex items-center gap-1 font-bold text-[#F80000] hover:underline transition-colors"
                                 >
                                     <span>Submit Profile</span>
                                     <ArrowUpRight className="w-3.5 h-3.5" />

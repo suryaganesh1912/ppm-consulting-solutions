@@ -18,7 +18,7 @@ export const WhoWeAre: React.FC = () => {
                         />
 
                         <p className="text-base sm:text-lg text-color-primary leading-relaxed font-normal">
-                            <strong>PPM CONSULTING SOLUTIONS</strong> is an enterprise consulting practice dedicated to empowering organizations through specialized Oracle Project Portfolio Management (Oracle PPM) solutions.
+                            <strong className="text-[#F80000]">PPM CONSULTING SOLUTIONS</strong> is an enterprise consulting practice dedicated to empowering organizations through specialized Oracle Project Portfolio Management (Oracle PPM) solutions.
                         </p>
 
                         <p className="text-sm sm:text-base text-color-secondary leading-relaxed font-normal">
@@ -27,30 +27,30 @@ export const WhoWeAre: React.FC = () => {
                     </div>
 
                     {/* Right Highlight Graphic Card */}
-                    <div className="lg:col-span-5 p-7 rounded-[10px] bg-slate-900 text-white border border-slate-800 shadow-md space-y-5">
-                        <div className="flex items-center gap-3 border-b border-slate-800 pb-4">
-                            <div className="w-9 h-9 rounded-[6px] bg-sky-950 text-sky-400 border border-sky-800 flex items-center justify-center shrink-0">
+                    <div className="lg:col-span-5 p-7 rounded-[10px] bg-[#242424] text-white border border-[#3D3D3D] shadow-md space-y-5">
+                        <div className="flex items-center gap-3 border-b border-[#3D3D3D] pb-4">
+                            <div className="w-9 h-9 rounded-[6px] bg-[#333333] text-[#00A3C4] border border-[#444444] flex items-center justify-center shrink-0">
                                 <ShieldCheck className="w-5 h-5" />
                             </div>
                             <div>
                                 <h3 className="font-bold text-sm sm:text-base text-white">
                                     Our Core Commitment
                                 </h3>
-                                <p className="text-xs text-slate-400">
+                                <p className="text-xs text-[#E5E5E5]">
                                     Value-Driven Oracle PPM Advisory
                                 </p>
                             </div>
                         </div>
 
-                        <ul className="space-y-3 text-xs sm:text-sm text-slate-300">
+                        <ul className="space-y-3 text-xs sm:text-sm text-[#E5E5E5]">
                             <li className="flex items-start gap-2.5">
-                                <span className="w-4 h-4 rounded-full bg-sky-900/80 text-sky-400 flex items-center justify-center shrink-0 mt-0.5">
+                                <span className="w-4 h-4 rounded-full bg-[#00758F]/30 text-[#00A3C4] flex items-center justify-center shrink-0 mt-0.5">
                                     <Check className="w-3 h-3" />
                                 </span>
                                 <span>Specialized functional advisory centered entirely on Oracle PPM Cloud modules.</span>
                             </li>
                             <li className="flex items-start gap-2.5">
-                                <span className="w-4 h-4 rounded-full bg-sky-900/80 text-sky-400 flex items-center justify-center shrink-0 mt-0.5">
+                                <span className="w-4 h-4 rounded-full bg-[#00758F]/30 text-[#00A3C4] flex items-center justify-center shrink-0 mt-0.5">
                                     <Check className="w-3 h-3" />
                                 </span>
                                 <span>Adaptable implementation methodologies tailored to unique organizational workflows.</span>

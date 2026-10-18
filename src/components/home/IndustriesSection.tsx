@@ -59,7 +59,7 @@ export const IndustriesSection: React.FC = () => {
                     />
                     <Link
                         href="/industries"
-                        className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-sky-600 dark:text-sky-400 hover:underline shrink-0 pb-1"
+                        className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#00758F] dark:text-[#00A3C4] hover:text-[#F80000] hover:underline shrink-0 pb-1"
                     >
                         <span>View all 7 supported industries</span>
                         <ArrowRight className="w-4 h-4" />
@@ -73,20 +73,20 @@ export const IndustriesSection: React.FC = () => {
                             <Link
                                 key={ind.title}
                                 href={`/industries#${ind.id}`}
-                                className="p-5 sm:p-6 rounded-[8px] bg-surface border border-theme hover:border-theme-strong shadow-xs transition-colors flex flex-col justify-between group focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
+                                className="p-5 sm:p-6 rounded-[8px] bg-surface border border-theme hover:border-[#F80000] shadow-xs transition-colors flex flex-col justify-between group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F80000]"
                             >
                                 <div className="space-y-3.5">
                                     <div className="flex items-center justify-between">
-                                        <div className="w-9 h-9 rounded-[6px] bg-slate-100 dark:bg-slate-800 text-sky-700 dark:text-sky-400 border border-theme flex items-center justify-center">
+                                        <div className="w-9 h-9 rounded-[6px] bg-[#E5E5E5]/50 dark:bg-[#333333] text-[#00758F] dark:text-[#00A3C4] border border-theme flex items-center justify-center">
                                             <Icon className="w-4.5 h-4.5" />
                                         </div>
-                                        <span className="text-[10px] font-mono font-semibold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded border border-theme">
+                                        <span className="text-[10px] font-mono font-semibold text-color-secondary bg-[#E5E5E5]/60 dark:bg-[#333333] px-2 py-0.5 rounded border border-theme">
                                             {ind.badge}
                                         </span>
                                     </div>
 
                                     <div>
-                                        <h3 className="text-base font-bold text-color-primary group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                                        <h3 className="text-base font-bold text-color-primary group-hover:text-[#F80000] transition-colors">
                                             {ind.title}
                                         </h3>
                                         <p className="mt-1.5 text-xs text-color-secondary leading-relaxed">
@@ -95,7 +95,7 @@ export const IndustriesSection: React.FC = () => {
                                     </div>
                                 </div>
 
-                                <div className="mt-5 pt-3 border-t border-theme-subtle flex items-center justify-between text-xs font-medium text-color-muted group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                                <div className="mt-5 pt-3 border-t border-theme-subtle flex items-center justify-between text-xs font-bold text-color-muted group-hover:text-[#F80000] transition-colors">
                                     <span>Industry workflows</span>
                                     <ArrowRight className="w-3.5 h-3.5 opacity-60" />
                                 </div>

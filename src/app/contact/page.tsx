@@ -19,17 +19,17 @@ export default function ContactPage() {
 
             <main className="flex-grow">
                 {/* Hero Banner */}
-                <section className="relative pt-28 pb-14 md:pt-36 md:pb-18 bg-slate-900 text-white border-b border-slate-800">
+                <section className="relative pt-28 pb-14 md:pt-36 md:pb-18 bg-[#1E1E1E] text-white border-b border-[#333333]">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                         <div className="max-w-2xl mx-auto space-y-4">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] bg-slate-800 border border-slate-700 text-sky-400 text-xs font-semibold">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] bg-[#2E2E2E] border border-[#444444] text-[#00A3C4] text-xs font-semibold">
                                 <MessageSquare className="w-3.5 h-3.5" />
                                 <span>Get in Touch</span>
                             </div>
                             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
-                                Connect with Our Practice
+                                Connect with <span className="text-[#F80000]">Our Practice</span>
                             </h1>
-                            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+                            <p className="text-sm sm:text-base text-[#E5E5E5] leading-relaxed font-normal">
                                 Connect with PPM CONSULTING SOLUTIONS for Oracle PPM consulting, implementation, and project financial management support.
                             </p>
                         </div>

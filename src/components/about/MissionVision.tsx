@@ -19,7 +19,7 @@ export const MissionVision: React.FC = () => {
                     {/* Mission Card */}
                     <div className="p-7 rounded-[10px] bg-surface border border-theme shadow-xs flex flex-col justify-between space-y-5">
                         <div className="space-y-3.5">
-                            <div className="w-10 h-10 rounded-[6px] bg-slate-100 dark:bg-slate-800 text-sky-700 dark:text-sky-400 border border-theme flex items-center justify-center">
+                            <div className="w-10 h-10 rounded-[6px] bg-[#E5E5E5]/50 dark:bg-[#333333] text-[#00758F] dark:text-[#00A3C4] border border-theme flex items-center justify-center">
                                 <Target className="w-5 h-5" />
                             </div>
                             <h3 className="text-lg sm:text-xl font-bold text-color-primary">Our Mission</h3>
@@ -27,23 +27,23 @@ export const MissionVision: React.FC = () => {
                                 &ldquo;Our mission is to help Oracle Cloud customers achieve their business goals through affordable, high-quality Oracle PPM consulting, implementation, and support services.&rdquo;
                             </p>
                         </div>
-                        <div className="pt-3.5 border-t border-theme-subtle text-[11px] font-mono font-semibold text-sky-600 dark:text-sky-400 uppercase tracking-wider">
+                        <div className="pt-3.5 border-t border-theme-subtle text-[11px] font-mono font-bold text-[#00758F] dark:text-[#00A3C4] uppercase tracking-wider">
                             Core Practice Mandate
                         </div>
                     </div>
 
                     {/* Vision Card */}
-                    <div className="p-7 rounded-[10px] bg-slate-900 text-white border border-slate-800 shadow-xs flex flex-col justify-between space-y-5">
+                    <div className="p-7 rounded-[10px] bg-[#242424] text-white border border-[#3D3D3D] shadow-xs flex flex-col justify-between space-y-5">
                         <div className="space-y-3.5">
-                            <div className="w-10 h-10 rounded-[6px] bg-sky-950 text-sky-400 border border-sky-800 flex items-center justify-center">
+                            <div className="w-10 h-10 rounded-[6px] bg-[#333333] text-[#00A3C4] border border-[#444444] flex items-center justify-center">
                                 <Compass className="w-5 h-5" />
                             </div>
                             <h3 className="text-lg sm:text-xl font-bold text-white">Our Vision</h3>
-                            <p className="text-slate-300 leading-relaxed font-normal text-xs sm:text-sm">
+                            <p className="text-[#E5E5E5] leading-relaxed font-normal text-xs sm:text-sm">
                                 &ldquo;To be the premier enterprise advisory partner for Oracle PPM implementations and process optimization, recognized globally for deep functional expertise, architectural excellence, and long-term client value creation.&rdquo;
                             </p>
                         </div>
-                        <div className="pt-3.5 border-t border-slate-800 text-[11px] font-mono font-semibold text-sky-400 uppercase tracking-wider">
+                        <div className="pt-3.5 border-t border-[#3D3D3D] text-[11px] font-mono font-bold text-[#00A3C4] uppercase tracking-wider">
                             Strategic Global Trajectory
                         </div>
                     </div>

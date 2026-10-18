@@ -46,17 +46,16 @@ const valueCards = [
 
 export const WhyUsAbout: React.FC = () => {
     return (
-        <section className="py-20 bg-slate-50 border-b border-slate-200/80">
+        <section className="py-20 bg-canvas-subtle border-b border-theme transition-colors">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <SectionHeading
                     tagline="Our Differentiators"
                     title="Why Choose PPM CONSULTING SOLUTIONS"
                     description="Built on core competencies that empower enterprise leaders to achieve clarity, control, and efficiency in project financial management."
                     align="center"
-                    theme="light"
                 />
 
-                <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {valueCards.map((card, idx) => {
                         const Icon = card.icon;
                         return (
@@ -66,15 +65,15 @@ export const WhyUsAbout: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: 0.08 * idx }}
-                                className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-lg hover:border-slate-300 transition-all duration-300 group"
+                                className="p-6 rounded-[10px] bg-surface border border-theme shadow-xs hover:border-[#F80000]/60 transition-colors group"
                             >
-                                <div className="w-12 h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center mb-5 group-hover:bg-sky-600 transition-colors">
+                                <div className="w-12 h-12 rounded-[8px] bg-[#F80000] text-white flex items-center justify-center mb-5 shadow-sm border border-[#D60000]">
                                     <Icon className="w-6 h-6" />
                                 </div>
-                                <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-sky-700 transition-colors">
+                                <h3 className="text-lg font-bold text-color-primary mb-2 group-hover:text-[#F80000] transition-colors">
                                     {card.title}
                                 </h3>
-                                <p className="text-sm text-slate-600 leading-relaxed font-normal">
+                                <p className="text-sm text-color-secondary leading-relaxed font-normal">
                                     {card.description}
                                 </p>
                             </motion.div>

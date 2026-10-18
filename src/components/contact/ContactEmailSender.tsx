@@ -125,7 +125,7 @@ export const ContactEmailSender: React.FC = () => {
         <div className="bg-surface rounded-[12px] p-6 sm:p-10 border border-theme shadow-sm max-w-3xl mx-auto space-y-6">
             {/* Header info */}
             <div className="text-center space-y-2">
-                <div className="w-10 h-10 rounded-[6px] bg-slate-100 dark:bg-slate-800 text-sky-700 dark:text-sky-400 flex items-center justify-center mx-auto border border-theme">
+                <div className="w-10 h-10 rounded-[6px] bg-[#E5E5E5]/50 dark:bg-[#333333] text-[#00758F] dark:text-[#00A3C4] flex items-center justify-center mx-auto border border-theme">
                     <Mail className="w-5 h-5" />
                 </div>
                 <div className="space-y-1">
@@ -159,16 +159,16 @@ export const ContactEmailSender: React.FC = () => {
 
                     <div className="bg-surface border border-theme rounded-[8px] p-4 text-xs text-color-secondary max-w-md mx-auto text-left space-y-1">
                         <div className="font-semibold text-color-primary">Inquiry Summary:</div>
-                        <div>• Service Domain: <span className="text-sky-600 dark:text-sky-400 font-medium">{formData.service}</span></div>
+                        <div>• Service Domain: <span className="text-[#00758F] dark:text-[#00A3C4] font-medium">{formData.service}</span></div>
                         <div>• Company: <span className="font-medium text-color-primary">{formData.company}</span></div>
-                        <div>• Reply Address: <span className="text-sky-600 dark:text-sky-400 font-medium">{formData.email}</span></div>
+                        <div>• Reply Address: <span className="text-[#00758F] dark:text-[#00A3C4] font-medium">{formData.email}</span></div>
                     </div>
 
                     <div className="pt-2">
                         <button
                             type="button"
                             onClick={handleReset}
-                            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-[6px] bg-slate-900 text-white dark:bg-sky-600 font-semibold text-xs transition-colors shadow-xs cursor-pointer"
+                            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-[6px] bg-[#F80000] text-white hover:bg-[#D60000] font-bold text-xs transition-colors shadow-xs cursor-pointer"
                         >
                             <RefreshCw className="w-3.5 h-3.5" />
                             <span>Send Another Inquiry</span>
@@ -217,7 +217,7 @@ export const ContactEmailSender: React.FC = () => {
                                     className={`w-full pl-9 pr-3 py-2 rounded-[6px] border bg-canvas text-color-primary text-xs sm:text-sm placeholder:text-color-muted focus:outline-none focus-visible:ring-2 transition-colors ${
                                         errors.name
                                             ? "border-red-500 focus-visible:ring-red-500/50"
-                                            : "border-theme focus-visible:ring-sky-500"
+                                            : "border-theme focus-visible:ring-[#F80000]"
                                     }`}
                                 />
                             </div>
@@ -252,7 +252,7 @@ export const ContactEmailSender: React.FC = () => {
                                     className={`w-full pl-9 pr-3 py-2 rounded-[6px] border bg-canvas text-color-primary text-xs sm:text-sm placeholder:text-color-muted focus:outline-none focus-visible:ring-2 transition-colors ${
                                         errors.company
                                             ? "border-red-500 focus-visible:ring-red-500/50"
-                                            : "border-theme focus-visible:ring-sky-500"
+                                            : "border-theme focus-visible:ring-[#F80000]"
                                     }`}
                                 />
                             </div>
@@ -290,7 +290,7 @@ export const ContactEmailSender: React.FC = () => {
                                     className={`w-full pl-9 pr-3 py-2 rounded-[6px] border bg-canvas text-color-primary text-xs sm:text-sm placeholder:text-color-muted focus:outline-none focus-visible:ring-2 transition-colors ${
                                         errors.email
                                             ? "border-red-500 focus-visible:ring-red-500/50"
-                                            : "border-theme focus-visible:ring-sky-500"
+                                            : "border-theme focus-visible:ring-[#F80000]"
                                     }`}
                                 />
                             </div>
@@ -320,7 +320,7 @@ export const ContactEmailSender: React.FC = () => {
                                     onChange={(e) =>
                                         setFormData({ ...formData, phone: e.target.value })
                                     }
-                                    className="w-full pl-9 pr-3 py-2 rounded-[6px] border border-theme bg-canvas text-color-primary text-xs sm:text-sm placeholder:text-color-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 transition-colors"
+                                    className="w-full pl-9 pr-3 py-2 rounded-[6px] border border-theme bg-canvas text-color-primary text-xs sm:text-sm placeholder:text-color-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F80000] transition-colors"
                                 />
                             </div>
                         </div>
@@ -344,7 +344,7 @@ export const ContactEmailSender: React.FC = () => {
                                 onChange={(e) =>
                                     setFormData({ ...formData, service: e.target.value })
                                 }
-                                className="w-full pl-9 pr-8 py-2 rounded-[6px] border border-theme bg-canvas text-color-primary text-xs sm:text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 transition-colors cursor-pointer appearance-none"
+                                className="w-full pl-9 pr-8 py-2 rounded-[6px] border border-theme bg-canvas text-color-primary text-xs sm:text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F80000] transition-colors cursor-pointer appearance-none"
                             >
                                 {serviceOptions.map((opt) => (
                                     <option key={opt} value={opt} className="bg-surface text-color-primary">
@@ -387,7 +387,7 @@ export const ContactEmailSender: React.FC = () => {
                                 className={`w-full p-3 rounded-[6px] border bg-canvas text-color-primary text-xs sm:text-sm placeholder:text-color-muted focus:outline-none focus-visible:ring-2 transition-colors resize-none ${
                                     errors.message
                                         ? "border-red-500 focus-visible:ring-red-500/50"
-                                        : "border-theme focus-visible:ring-sky-500"
+                                        : "border-theme focus-visible:ring-[#F80000]"
                                 }`}
                             />
                         </div>
@@ -401,10 +401,10 @@ export const ContactEmailSender: React.FC = () => {
                         <button
                             type="submit"
                             disabled={isSubmitting}
-                            className={`inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-[6px] font-semibold text-xs sm:text-sm transition-colors shadow-xs cursor-pointer ${
+                            className={`inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-[6px] font-bold text-xs sm:text-sm transition-colors shadow-xs cursor-pointer ${
                                 isSubmitting
-                                    ? "bg-slate-400 text-white cursor-not-allowed"
-                                    : "bg-slate-900 text-white dark:bg-sky-600 hover:bg-slate-800 dark:hover:bg-sky-500"
+                                    ? "bg-[#F80000]/60 text-white cursor-not-allowed"
+                                    : "bg-[#F80000] text-white hover:bg-[#D60000] active:bg-[#B30000] border border-[#D60000]"
                             }`}
                         >
                             {isSubmitting ? (

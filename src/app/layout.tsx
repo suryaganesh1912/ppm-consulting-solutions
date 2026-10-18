@@ -36,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${plusJakartaSans.variable} scroll-smooth`} suppressHydrationWarning>
+    <html lang="en" className={`${plusJakartaSans.variable} scroll-smooth`} data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -52,7 +52,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-canvas text-color-primary font-sans antialiased selection:bg-sky-600 selection:text-white">
+      <body className="min-h-screen flex flex-col bg-canvas text-color-primary font-sans antialiased selection:bg-[#F80000] selection:text-white">
         {children}
       </body>
     </html>

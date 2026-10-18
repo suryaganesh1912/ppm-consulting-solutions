@@ -26,9 +26,9 @@ export const CTASection: React.FC<CTASectionProps> = ({
     return (
         <section className={`py-16 md:py-20 bg-canvas-subtle border-t border-theme ${className}`}>
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="rounded-[12px] bg-slate-900 dark:bg-slate-950 border border-slate-800 p-8 sm:p-12 text-center text-white shadow-md space-y-6">
+                <div className="rounded-[12px] bg-[#242424] dark:bg-[#1A1A1A] border border-[#3D3D3D] p-8 sm:p-12 text-center text-white shadow-md space-y-6">
                     {/* Practice Badge */}
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[4px] bg-slate-800 border border-slate-700 text-sky-400 text-xs font-semibold">
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[4px] bg-[#333333] border border-[#444444] text-[#00A3C4] text-xs font-semibold">
                         <ShieldCheck className="w-3.5 h-3.5" />
                         <span>Dedicated Oracle PPM Implementation & Advisory Practice</span>
                     </div>
@@ -39,7 +39,7 @@ export const CTASection: React.FC<CTASectionProps> = ({
                     </h2>
 
                     {/* Body Text */}
-                    <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed">
+                    <p className="text-sm sm:text-base text-[#E5E5E5] max-w-2xl mx-auto font-normal leading-relaxed">
                         {text}
                     </p>
 
@@ -47,7 +47,7 @@ export const CTASection: React.FC<CTASectionProps> = ({
                     <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
                         <Button
                             href={buttonHref}
-                            variant="accent"
+                            variant="primary"
                             size="md"
                             icon={<ArrowRight className="w-4 h-4" />}
                         >

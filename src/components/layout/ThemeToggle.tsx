@@ -42,10 +42,10 @@ export const ThemeToggle: React.FC<{ className?: string }> = ({ className = "" }
         <button
             type="button"
             onClick={toggleTheme}
-            className={`p-2 rounded-lg border transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 cursor-pointer ${
+            className={`p-2 rounded-lg border transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F80000] cursor-pointer ${
                 theme === "dark"
-                    ? "bg-slate-900 border-slate-700 text-amber-400 hover:bg-slate-800"
-                    : "bg-slate-100 border-slate-200 text-slate-700 hover:bg-slate-200"
+                    ? "bg-[#333333] border-[#444444] text-[#FFB800] hover:bg-[#3D3D3D]"
+                    : "bg-[#E5E5E5]/60 border-theme text-[#333333] hover:bg-[#E5E5E5]"
             } ${className}`}
             aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
             title={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}

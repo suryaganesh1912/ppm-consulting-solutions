@@ -54,13 +54,13 @@ export const ServicesSection: React.FC = () => {
                 {/* Asymmetric Service Layout: Featured Practice Pillar + 3 Supporting Modules */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
                     {/* Featured Anchor Service: Strategic PPM Advisory */}
-                    <div className="lg:col-span-5 p-7 sm:p-8 rounded-[10px] bg-slate-900 dark:bg-slate-950 text-white border border-slate-800 shadow-sm flex flex-col justify-between space-y-6">
+                    <div className="lg:col-span-5 p-7 sm:p-8 rounded-[10px] bg-[#242424] dark:bg-[#1A1A1A] text-white border border-[#3D3D3D] shadow-sm flex flex-col justify-between space-y-6">
                         <div className="space-y-4">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold uppercase tracking-wider text-sky-400 bg-sky-950/60 border border-sky-800/80 px-2.5 py-0.5 rounded-[4px]">
+                                <span className="text-[11px] font-bold uppercase tracking-wider text-[#00A3C4] bg-[#333333] border border-[#444444] px-2.5 py-0.5 rounded-[4px]">
                                     Lead Advisory Practice
                                 </span>
-                                <div className="w-10 h-10 rounded-[6px] bg-sky-600/20 text-sky-400 border border-sky-500/30 flex items-center justify-center">
+                                <div className="w-10 h-10 rounded-[6px] bg-[#00758F]/20 text-[#00A3C4] border border-[#00758F]/40 flex items-center justify-center">
                                     <Compass className="w-5 h-5" />
                                 </div>
                             </div>
@@ -69,29 +69,29 @@ export const ServicesSection: React.FC = () => {
                                 Strategic Oracle PPM Consulting
                             </h3>
 
-                            <p className="text-sm text-slate-300 leading-relaxed font-normal">
+                            <p className="text-sm text-[#E5E5E5] leading-relaxed font-normal">
                                 Comprehensive architectural assessment, software fit-gap evaluation, and financial governance design. We partner with CFOs and program leaders to ensure Oracle PPM directly supports strategic corporate objectives.
                             </p>
 
-                            <div className="space-y-2 pt-2 border-t border-slate-800">
-                                <div className="text-xs font-semibold text-slate-200">
+                            <div className="space-y-2 pt-2 border-t border-[#3D3D3D]">
+                                <div className="text-xs font-semibold text-white">
                                     Key Engagement Deliverables:
                                 </div>
-                                <ul className="space-y-2 text-xs text-slate-400">
+                                <ul className="space-y-2 text-xs text-[#E5E5E5]">
                                     <li className="flex items-center gap-2">
-                                        <span className="w-4 h-4 rounded-full bg-sky-900/60 text-sky-400 flex items-center justify-center shrink-0">
+                                        <span className="w-4 h-4 rounded-full bg-[#00758F]/30 text-[#00A3C4] flex items-center justify-center shrink-0">
                                             <Check className="w-3 h-3" />
                                         </span>
                                         <span>ERP to PPM Fit-Gap & Architecture Roadmap</span>
                                     </li>
                                     <li className="flex items-center gap-2">
-                                        <span className="w-4 h-4 rounded-full bg-sky-900/60 text-sky-400 flex items-center justify-center shrink-0">
+                                        <span className="w-4 h-4 rounded-full bg-[#00758F]/30 text-[#00A3C4] flex items-center justify-center shrink-0">
                                             <Check className="w-3 h-3" />
                                         </span>
                                         <span>Project Subledger & General Ledger Accounting Models</span>
                                     </li>
                                     <li className="flex items-center gap-2">
-                                        <span className="w-4 h-4 rounded-full bg-sky-900/60 text-sky-400 flex items-center justify-center shrink-0">
+                                        <span className="w-4 h-4 rounded-full bg-[#00758F]/30 text-[#00A3C4] flex items-center justify-center shrink-0">
                                             <Check className="w-3 h-3" />
                                         </span>
                                         <span>Multi-Entity & Multi-Currency Governance Frameworks</span>
@@ -100,10 +100,10 @@ export const ServicesSection: React.FC = () => {
                             </div>
                         </div>
 
-                        <div className="pt-4 border-t border-slate-800">
+                        <div className="pt-4 border-t border-[#3D3D3D]">
                             <Button
                                 href="/services"
-                                variant="accent"
+                                variant="primary"
                                 size="sm"
                                 fullWidth
                                 icon={<ArrowRight className="w-4 h-4" />}
@@ -121,19 +121,19 @@ export const ServicesSection: React.FC = () => {
                                 <Link
                                     key={service.title}
                                     href={service.href}
-                                    className="p-5 sm:p-6 rounded-[10px] bg-surface border border-theme hover:border-theme-strong shadow-xs transition-colors flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 group focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
+                                    className="p-5 sm:p-6 rounded-[10px] bg-surface border border-theme hover:border-[#F80000] shadow-xs transition-colors flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F80000]"
                                 >
                                     <div className="flex items-start gap-4">
-                                        <div className="w-10 h-10 rounded-[6px] bg-slate-100 dark:bg-slate-800 text-sky-700 dark:text-sky-400 border border-theme flex items-center justify-center shrink-0">
+                                        <div className="w-10 h-10 rounded-[6px] bg-[#E5E5E5]/50 dark:bg-[#333333] text-[#00758F] dark:text-[#00A3C4] border border-theme flex items-center justify-center shrink-0">
                                             <Icon className="w-5 h-5" />
                                         </div>
                                         <div className="space-y-1">
                                             <div className="flex items-center gap-2">
-                                                <span className="text-[10px] font-bold text-sky-600 dark:text-sky-400 uppercase tracking-wider">
+                                                <span className="text-[10px] font-bold text-[#00758F] dark:text-[#00A3C4] uppercase tracking-wider">
                                                     {service.tag}
                                                 </span>
                                             </div>
-                                            <h4 className="text-base font-bold text-color-primary group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                                            <h4 className="text-base font-bold text-color-primary group-hover:text-[#F80000] transition-colors">
                                                 {service.title}
                                             </h4>
                                             <p className="text-xs sm:text-sm text-color-secondary leading-relaxed max-w-xl">
@@ -142,7 +142,7 @@ export const ServicesSection: React.FC = () => {
                                         </div>
                                     </div>
                                     <div className="shrink-0 self-end sm:self-center">
-                                        <span className="inline-flex items-center gap-1 text-xs font-semibold text-color-muted group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                                        <span className="inline-flex items-center gap-1 text-xs font-bold text-color-muted group-hover:text-[#F80000] transition-colors">
                                             Explore <ArrowRight className="w-3.5 h-3.5" />
                                         </span>
                                     </div>

@@ -19,7 +19,7 @@ export default function PrivacyPolicyPage() {
             <main className="flex-grow pt-32 pb-20 md:pt-38 md:pb-24">
                 <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
                     <div className="space-y-3 text-center">
-                        <div className="inline-flex items-center gap-1.5 px-2.5 py-0.75 rounded-[4px] bg-slate-100 dark:bg-slate-800 border border-theme text-sky-700 dark:text-sky-400 text-xs font-semibold">
+                        <div className="inline-flex items-center gap-1.5 px-2.5 py-0.75 rounded-[4px] bg-[#E5E5E5]/50 dark:bg-[#333333] border border-theme text-[#00758F] dark:text-[#00A3C4] text-xs font-bold">
                             <ShieldCheck className="w-3.5 h-3.5" />
                             <span>Privacy & Governance</span>
                         </div>
@@ -76,7 +76,7 @@ export default function PrivacyPolicyPage() {
                                 For questions regarding our privacy practices, data handling, or confidentiality commitments, please contact our practice lead directly at{" "}
                                 <a
                                     href={`mailto:${siteConfig.email}`}
-                                    className="text-sky-600 dark:text-sky-400 font-semibold underline"
+                                    className="text-[#00758F] dark:text-[#00A3C4] hover:text-[#F80000] font-bold underline"
                                 >
                                     {siteConfig.email}
                                 </a>.

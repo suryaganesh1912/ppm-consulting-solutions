@@ -26,12 +26,12 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
         : "text-color-primary";
 
     const descColor = isExplicitDark
-        ? "text-slate-300"
+        ? "text-[#E5E5E5]"
         : "text-color-secondary";
 
     const tagBg = isExplicitDark
-        ? "bg-slate-800 text-sky-400 border-slate-700"
-        : "bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-theme";
+        ? "bg-[#333333] text-[#00A3C4] border-[#3D3D3D]"
+        : "bg-[#E5E5E5]/50 dark:bg-[#333333] text-[#00758F] dark:text-[#00A3C4] border-theme";
 
     return (
         <div
@@ -41,9 +41,9 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
         >
             {tagline && (
                 <div
-                    className={`inline-flex items-center gap-1.5 px-2.5 py-0.75 rounded-[4px] text-[11px] font-semibold uppercase tracking-wider mb-3.5 border ${tagBg}`}
+                    className={`inline-flex items-center gap-1.5 px-2.5 py-0.75 rounded-[4px] text-[11px] font-bold uppercase tracking-wider mb-3.5 border ${tagBg}`}
                 >
-                    <span className="w-1.5 h-1.5 rounded-full bg-sky-600 dark:bg-sky-400" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#F80000]" />
                     <span>{tagline}</span>
                 </div>
             )}

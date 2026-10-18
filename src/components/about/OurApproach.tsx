@@ -73,19 +73,19 @@ export const OurApproach: React.FC = () => {
                         return (
                             <div
                                 key={step.number}
-                                className="p-6 rounded-[10px] bg-surface border border-theme hover:border-theme-strong shadow-xs transition-colors flex flex-col justify-between group space-y-4"
+                                className="p-6 rounded-[10px] bg-surface border border-theme hover:border-[#F80000]/60 shadow-xs transition-colors flex flex-col justify-between group space-y-4"
                             >
                                 <div>
                                     <div className="flex items-center justify-between mb-3">
-                                        <span className="text-xl font-bold font-mono text-slate-400 group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                                        <span className="text-xl font-bold font-mono text-color-muted group-hover:text-[#F80000] transition-colors">
                                             {step.number}
                                         </span>
-                                        <div className="w-9 h-9 rounded-[6px] bg-slate-100 dark:bg-slate-800 text-sky-700 dark:text-sky-400 border border-theme flex items-center justify-center">
+                                        <div className="w-9 h-9 rounded-[6px] bg-[#E5E5E5]/50 dark:bg-[#333333] text-[#00758F] dark:text-[#00A3C4] border border-theme flex items-center justify-center">
                                             <Icon className="w-4.5 h-4.5" />
                                         </div>
                                     </div>
 
-                                    <h3 className="text-base font-bold text-color-primary mb-1.5">
+                                    <h3 className="text-base font-bold text-color-primary mb-1.5 group-hover:text-[#F80000] transition-colors">
                                         {step.title}
                                     </h3>
                                     <p className="text-xs sm:text-sm text-color-secondary leading-relaxed font-normal">
@@ -93,7 +93,7 @@ export const OurApproach: React.FC = () => {
                                     </p>
                                 </div>
 
-                                <div className="pt-3 border-t border-theme-subtle flex items-center text-[11px] font-mono font-semibold text-color-muted group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                                <div className="pt-3 border-t border-theme-subtle flex items-center text-[11px] font-mono font-bold text-color-muted group-hover:text-[#F80000] transition-colors">
                                     <span>Phase {idx + 1} Milestone</span>
                                 </div>
                             </div>

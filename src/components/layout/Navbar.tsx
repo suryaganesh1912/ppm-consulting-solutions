@@ -44,8 +44,6 @@ export const Navbar: React.FC = () => {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-
-
     const isActive = (href: string) => {
         if (href === "/") {
             return pathname === "/";
@@ -63,7 +61,7 @@ export const Navbar: React.FC = () => {
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between">
-                    {/* Brand Logo */}
+                    {/* Brand Logo with Red Mark */}
                     <Logo size="md" />
 
                     {/* Desktop Navigation Links */}
@@ -78,10 +76,10 @@ export const Navbar: React.FC = () => {
                                     key={link.name}
                                     href={link.href}
                                     aria-current={active ? "page" : undefined}
-                                    className={`px-3 py-1.75 text-xs xl:text-sm font-medium rounded-[6px] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 ${
+                                    className={`px-3 py-1.75 text-xs xl:text-sm rounded-[6px] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F80000] ${
                                         active
-                                            ? "bg-slate-200/70 dark:bg-slate-800 text-sky-700 dark:text-sky-400 font-semibold"
-                                            : "text-color-secondary hover:text-color-primary hover:bg-slate-100 dark:hover:bg-slate-800/60"
+                                            ? "bg-[#E5E5E5]/70 dark:bg-[#333333] text-[#F80000] dark:text-[#FF3B30] font-bold shadow-2xs"
+                                            : "text-color-secondary hover:text-[#F80000] hover:bg-[#E5E5E5]/40 dark:hover:bg-[#333333]/60 font-medium"
                                     }`}
                                 >
                                     {link.name}
@@ -90,7 +88,7 @@ export const Navbar: React.FC = () => {
                         })}
                     </nav>
 
-                    {/* Desktop Controls: Theme Toggle & Primary Action */}
+                    {/* Desktop Controls: Theme Toggle & Primary Red Action Button */}
                     <div className="hidden lg:flex items-center gap-2.5">
                         <ThemeToggle />
                         <Button
@@ -108,7 +106,7 @@ export const Navbar: React.FC = () => {
                         <ThemeToggle />
                         <button
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                            className="p-2 rounded-lg border border-theme text-color-primary hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 transition-colors"
+                            className="p-2 rounded-lg border border-theme text-color-primary hover:bg-[#E5E5E5]/40 dark:hover:bg-[#333333] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F80000] transition-colors"
                             aria-expanded={mobileMenuOpen}
                             aria-label="Toggle Navigation Menu"
                         >
@@ -142,10 +140,10 @@ export const Navbar: React.FC = () => {
                                             href={link.href}
                                             aria-current={active ? "page" : undefined}
                                             onClick={() => setMobileMenuOpen(false)}
-                                            className={`flex items-center justify-between px-3.5 py-2.5 rounded-[6px] text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 min-h-[44px] ${
+                                            className={`flex items-center justify-between px-3.5 py-2.5 rounded-[6px] text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F80000] min-h-[44px] ${
                                                 active
-                                                    ? "bg-slate-200/80 dark:bg-slate-800 text-sky-700 dark:text-sky-400 font-semibold"
-                                                    : "text-color-secondary hover:text-color-primary hover:bg-slate-100 dark:hover:bg-slate-800/60"
+                                                    ? "bg-[#E5E5E5]/80 dark:bg-[#333333] text-[#F80000] dark:text-[#FF3B30] font-bold"
+                                                    : "text-color-secondary hover:text-[#F80000] hover:bg-[#E5E5E5]/40 dark:hover:bg-[#333333]/60 font-medium"
                                             }`}
                                         >
                                             <span>{link.name}</span>

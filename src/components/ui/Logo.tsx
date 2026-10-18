@@ -32,29 +32,29 @@ export const Logo: React.FC<LogoProps> = ({
     const textPrimaryClass = isExplicitLight
         ? "text-white"
         : isExplicitDark
-        ? "text-slate-900"
+        ? "text-[#333333]"
         : "text-color-primary";
 
     const textSubClass = isExplicitLight
-        ? "text-slate-300"
+        ? "text-[#E5E5E5]"
         : isExplicitDark
-        ? "text-slate-600"
+        ? "text-[#555555]"
         : "text-color-secondary";
 
     return (
         <Link
             href="/"
-            className={`inline-flex items-center gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded-[6px] transition-opacity select-none ${className}`}
+            className={`inline-flex items-center gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F80000] rounded-[6px] transition-opacity select-none ${className}`}
             aria-label="PPM CONSULTING SOLUTIONS - Home"
         >
-            {/* Geometric Oracle PPM Architectural Mark */}
-            <div className="w-8 h-8 rounded-[6px] bg-slate-900 dark:bg-sky-600 text-white flex items-center justify-center shrink-0 border border-slate-800 dark:border-sky-500 shadow-xs">
+            {/* Primary Red Highlighted Logo Mark */}
+            <div className="w-8 h-8 rounded-[6px] bg-[#F80000] text-white flex items-center justify-center shrink-0 border border-[#D60000] shadow-sm">
                 <svg
                     className="w-4.5 h-4.5"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="2.2"
+                    strokeWidth="2.4"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     aria-hidden="true"
@@ -68,8 +68,8 @@ export const Logo: React.FC<LogoProps> = ({
 
             {/* Typography */}
             <div className="flex flex-col leading-none">
-                <span className={`font-bold ${sizeClasses} ${textPrimaryClass}`}>
-                    PPM
+                <span className={`font-extrabold ${sizeClasses} ${textPrimaryClass} flex items-center`}>
+                    PPM<span className="text-[#F80000] ml-0.5 font-black">.</span>
                 </span>
                 <span className={`font-semibold uppercase ${subtextSizes} ${textSubClass} mt-0.5`}>
                     CONSULTING SOLUTIONS

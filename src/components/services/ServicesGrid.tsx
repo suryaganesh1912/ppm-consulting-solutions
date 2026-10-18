@@ -59,13 +59,13 @@ export const ServicesGrid: React.FC = () => {
                             placeholder="Search by keyword, module, or capability (e.g., FBDI, Billing, SLA)..."
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className="w-full pl-10 pr-10 py-2.5 rounded-[8px] border border-theme bg-surface text-color-primary text-xs sm:text-sm placeholder:text-color-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 shadow-xs transition-colors"
+                            className="w-full pl-10 pr-10 py-2.5 rounded-[8px] border border-theme bg-surface text-color-primary text-xs sm:text-sm placeholder:text-color-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F80000] shadow-xs transition-colors"
                         />
                         {searchQuery && (
                             <button
                                 type="button"
                                 onClick={() => setSearchQuery("")}
-                                className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-color-muted hover:text-color-primary cursor-pointer"
+                                className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-color-muted hover:text-[#F80000] cursor-pointer"
                                 aria-label="Clear search"
                             >
                                 <X className="w-4 h-4" />
@@ -81,10 +81,10 @@ export const ServicesGrid: React.FC = () => {
                                 <button
                                     key={cat}
                                     onClick={() => setActiveCategory(cat)}
-                                    className={`px-3.5 py-1.5 text-xs font-semibold rounded-[6px] border transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 ${
+                                    className={`px-3.5 py-1.5 text-xs font-bold rounded-[6px] border transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F80000] ${
                                         isActive
-                                            ? "bg-slate-900 text-white dark:bg-sky-600 dark:text-white border-slate-900 dark:border-sky-600 shadow-xs"
-                                            : "bg-surface text-color-secondary hover:text-color-primary hover:bg-slate-100 dark:hover:bg-slate-800 border-theme"
+                                            ? "bg-[#F80000] text-white border-[#D60000] shadow-sm"
+                                            : "bg-surface text-color-secondary hover:text-[#F80000] hover:bg-[#E5E5E5]/40 border-theme"
                                     }`}
                                 >
                                     {cat}
@@ -106,7 +106,7 @@ export const ServicesGrid: React.FC = () => {
                     </div>
                 ) : (
                     <div className="p-12 text-center rounded-[10px] bg-surface border border-theme max-w-xl mx-auto space-y-3">
-                        <div className="w-10 h-10 rounded-[6px] bg-slate-100 dark:bg-slate-800 text-color-muted flex items-center justify-center mx-auto border border-theme">
+                        <div className="w-10 h-10 rounded-[6px] bg-[#E5E5E5]/50 dark:bg-[#333333] text-color-muted flex items-center justify-center mx-auto border border-theme">
                             <Search className="w-5 h-5" />
                         </div>
                         <h3 className="text-base font-bold text-color-primary">
@@ -122,9 +122,9 @@ export const ServicesGrid: React.FC = () => {
                                     setSearchQuery("");
                                     setActiveCategory("All Services");
                                 }}
-                                className="px-3.5 py-1.5 rounded-[6px] bg-slate-900 text-white dark:bg-sky-600 text-xs font-medium cursor-pointer"
+                                className="px-4 py-2 rounded-[6px] bg-[#F80000] text-white hover:bg-[#D60000] text-xs font-bold transition-colors cursor-pointer"
                             >
-                                Reset Filters
+                                Reset Search Filters
                             </button>
                         </div>
                     </div>
