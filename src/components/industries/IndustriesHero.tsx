@@ -13,7 +13,7 @@ export const IndustriesHero: React.FC = () => {
                         <span>Vertical Industry Alignment Matrix</span>
                     </div>
 
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold tracking-tight text-white leading-tight">
                         Industries We <span className="text-[#F80000]">Support</span>
                     </h1>
 

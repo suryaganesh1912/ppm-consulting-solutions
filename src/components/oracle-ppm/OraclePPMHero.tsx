@@ -13,7 +13,7 @@ export const OraclePPMHero: React.FC = () => {
                         <span>Functional Architecture & Domain Guide</span>
                     </div>
 
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold tracking-tight text-white leading-tight">
                         Oracle PPM <span className="text-[#F80000]">Architectural Suite</span>
                     </h1>
 

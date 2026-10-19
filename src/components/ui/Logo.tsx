@@ -68,10 +68,10 @@ export const Logo: React.FC<LogoProps> = ({
 
             {/* Typography */}
             <div className="flex flex-col leading-none">
-                <span className={`font-extrabold ${sizeClasses} ${textPrimaryClass} flex items-center`}>
+                <span className={`font-heading font-extrabold ${sizeClasses} ${textPrimaryClass} flex items-center`}>
                     PPM<span className="text-[#F80000] ml-0.5 font-black">.</span>
                 </span>
-                <span className={`font-semibold uppercase ${subtextSizes} ${textSubClass} mt-0.5`}>
+                <span className={`font-heading font-bold uppercase ${subtextSizes} ${textSubClass} mt-0.5`}>
                     CONSULTING SOLUTIONS
                 </span>
             </div>

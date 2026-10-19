@@ -509,13 +509,18 @@ export const ResumeForm: React.FC = () => {
 
                             {/* Row 4: PDF Resume Upload Dropzone */}
                             <div className="space-y-1.5">
-                                <div className="flex items-center justify-between">
+                                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
                                     <label className="block text-xs font-semibold text-color-primary uppercase tracking-wider">
                                         Resume / CV Document (PDF) <span className="text-red-500">*</span>
                                     </label>
-                                    <span className="text-[11px] text-color-muted font-mono">
-                                        PDF format only • Max 5 MB
-                                    </span>
+                                    <div className="flex items-center gap-1.5 text-[11px] font-mono">
+                                        <span className="px-2 py-0.5 rounded-[4px] bg-[#E5E5E5]/60 dark:bg-[#333333] text-[#00758F] dark:text-[#00A3C4] font-semibold border border-theme">
+                                            Format: .PDF
+                                        </span>
+                                        <span className="px-2 py-0.5 rounded-[4px] bg-[#E5E5E5]/60 dark:bg-[#333333] text-color-secondary border border-theme">
+                                            Max Capacity: 5 MB
+                                        </span>
+                                    </div>
                                 </div>
 
                                 <input
@@ -578,12 +583,12 @@ export const ResumeForm: React.FC = () => {
                                             <div className="w-10 h-10 rounded-full bg-[#E5E5E5]/50 dark:bg-[#333333] text-[#00758F] dark:text-[#00A3C4] flex items-center justify-center border border-theme">
                                                 <UploadCloud className="w-5 h-5" />
                                             </div>
-                                            <div className="space-y-0.5">
+                                            <div className="space-y-1">
                                                 <p className="text-xs sm:text-sm font-semibold text-color-primary">
                                                     Click to select PDF or drag and drop here
                                                 </p>
                                                 <p className="text-[11px] text-color-muted">
-                                                    Official resumes, CVs, or project delivery portfolios (.pdf only)
+                                                    Standard PDF resumes, CVs, or delivery portfolios up to 5 MB
                                                 </p>
                                             </div>
                                         </div>

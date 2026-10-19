@@ -13,7 +13,7 @@ export const ServicesHero: React.FC = () => {
                         <span>Comprehensive Consulting Capabilities</span>
                     </div>
 
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold tracking-tight text-white leading-tight">
                         Our <span className="text-[#F80000]">Consulting Services</span>
                     </h1>
 

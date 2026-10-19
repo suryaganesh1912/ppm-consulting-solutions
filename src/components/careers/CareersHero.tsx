@@ -13,7 +13,7 @@ export const CareersHero: React.FC = () => {
                         <span>Join Our Oracle Advisory Practice</span>
                     </div>
 
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold tracking-tight text-white leading-tight">
                         Build Your Career with <span className="text-[#F80000]">PPM CONSULTING SOLUTIONS</span>
                     </h1>
 

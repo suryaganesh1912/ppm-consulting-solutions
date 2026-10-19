@@ -19,7 +19,7 @@ export const HeroSection: React.FC = () => {
                         </div>
 
                         {/* Main Headline */}
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-color-primary tracking-tight leading-[1.15]">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-heading font-extrabold text-color-primary tracking-tight leading-[1.15]">
                             Transforming Project Controls with{" "}
                             <span className="text-[#F80000]">
                                 Oracle PPM Solutions

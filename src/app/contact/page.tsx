@@ -26,7 +26,7 @@ export default function ContactPage() {
                                 <MessageSquare className="w-3.5 h-3.5" />
                                 <span>Get in Touch</span>
                             </div>
-                            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+                            <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold tracking-tight text-white leading-tight">
                                 Connect with <span className="text-[#F80000]">Our Practice</span>
                             </h1>
                             <p className="text-sm sm:text-base text-[#E5E5E5] leading-relaxed font-normal">
