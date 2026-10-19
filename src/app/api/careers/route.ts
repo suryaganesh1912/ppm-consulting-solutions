@@ -121,10 +121,9 @@ export async function POST(req: Request) {
         const formattedFileSize = `${(resumeFile.size / 1024).toFixed(1)} KB`;
 
         // 2. Resolve credentials & recipient
-        const resendApiKey =
-            process.env.RESEND_API_KEY || "re_KmwFsDTs_GoqbpucRTw52pgBmuQaqhh3p";
+        const resendApiKey = process.env.RESEND_API_KEY || "";
         const recipientEmail =
-            process.env.RECEIVER_EMAIL || "charan06082004@gmail.com";
+            process.env.RECEIVER_EMAIL || "suryaganesh2619@gmail.com";
         const senderEmail =
             process.env.SENDER_EMAIL || "PPM Consulting Solutions <onboarding@resend.dev>";
 
