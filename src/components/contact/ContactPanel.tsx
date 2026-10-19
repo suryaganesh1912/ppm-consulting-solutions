@@ -4,8 +4,8 @@ import { siteConfig } from "@/data/config";
 
 export const ContactPanel: React.FC = () => {
     return (
-        <div className="bg-surface rounded-[10px] p-6 sm:p-8 shadow-xs border border-theme max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 divide-y md:divide-y-0 md:divide-x divide-theme">
+        <div className="bg-surface rounded-[10px] p-6 sm:p-8 shadow-xs border border-theme max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-[1.35fr_1fr_1.15fr] gap-6 divide-y md:divide-y-0 md:divide-x divide-theme">
                 {/* Email */}
                 <div className="flex items-start gap-3 pt-4 md:pt-0 md:px-4 first:pt-0 first:px-0 min-w-0">
                     <div className="w-10 h-10 rounded-[6px] bg-[#E5E5E5]/50 dark:bg-[#333333] text-[#00758F] dark:text-[#00A3C4] flex items-center justify-center border border-theme shrink-0">
@@ -17,7 +17,8 @@ export const ContactPanel: React.FC = () => {
                         </span>
                         <a
                             href={`mailto:${siteConfig.email}`}
-                            className="text-xs sm:text-sm font-bold text-[#00758F] dark:text-[#00A3C4] hover:text-[#F80000] hover:underline transition-colors block truncate"
+                            className="text-xs sm:text-[13px] lg:text-sm font-bold text-[#00758F] dark:text-[#00A3C4] hover:text-[#F80000] hover:underline transition-colors block break-all sm:break-normal"
+                            title={siteConfig.email}
                         >
                             {siteConfig.email}
                         </a>
