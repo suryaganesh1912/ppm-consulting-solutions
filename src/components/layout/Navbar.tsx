@@ -76,10 +76,10 @@ export const Navbar: React.FC = () => {
                                     key={link.name}
                                     href={link.href}
                                     aria-current={active ? "page" : undefined}
-                                    className={`px-3 py-1.75 text-xs xl:text-sm rounded-[6px] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F80000] ${
+                                    className={`px-3.5 py-1.75 text-xs xl:text-sm rounded-[6px] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                                         active
-                                            ? "bg-[#E5E5E5]/70 dark:bg-[#333333] text-[#F80000] dark:text-[#FF3B30] font-bold shadow-2xs"
-                                            : "text-color-secondary hover:text-[#F80000] hover:bg-[#E5E5E5]/40 dark:hover:bg-[#333333]/60 font-medium"
+                                            ? "bg-primary text-white font-bold shadow-xs"
+                                            : "text-color-secondary hover:text-color-primary hover:bg-surface-interactive font-medium"
                                     }`}
                                 >
                                     {link.name}
@@ -106,7 +106,7 @@ export const Navbar: React.FC = () => {
                         <ThemeToggle />
                         <button
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                            className="p-2 rounded-lg border border-theme text-color-primary hover:bg-[#E5E5E5]/40 dark:hover:bg-[#333333] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F80000] transition-colors"
+                            className="p-2 rounded-lg border border-theme text-color-primary hover:bg-surface-interactive focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors"
                             aria-expanded={mobileMenuOpen}
                             aria-label="Toggle Navigation Menu"
                         >
@@ -140,10 +140,10 @@ export const Navbar: React.FC = () => {
                                             href={link.href}
                                             aria-current={active ? "page" : undefined}
                                             onClick={() => setMobileMenuOpen(false)}
-                                            className={`flex items-center justify-between px-3.5 py-2.5 rounded-[6px] text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F80000] min-h-[44px] ${
+                                            className={`flex items-center justify-between px-3.5 py-2.5 rounded-[6px] text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary min-h-[44px] ${
                                                 active
-                                                    ? "bg-[#E5E5E5]/80 dark:bg-[#333333] text-[#F80000] dark:text-[#FF3B30] font-bold"
-                                                    : "text-color-secondary hover:text-[#F80000] hover:bg-[#E5E5E5]/40 dark:hover:bg-[#333333]/60 font-medium"
+                                                    ? "bg-primary text-white font-bold shadow-xs"
+                                                    : "text-color-secondary hover:text-color-primary hover:bg-surface-interactive font-medium"
                                             }`}
                                         >
                                             <span>{link.name}</span>
