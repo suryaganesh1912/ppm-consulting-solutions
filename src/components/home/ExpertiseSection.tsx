@@ -75,23 +75,26 @@ const expertiseModules = [
 
 export const ExpertiseSection: React.FC = () => {
     return (
-        <section id="oracle-ppm" className="py-20 bg-canvas-subtle border-y border-theme transition-colors">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <section id="oracle-ppm" className="py-20 bg-slate-50 border-y border-slate-200/80">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <SectionHeading
                     tagline="Core Capabilities"
                     title="Oracle PPM Expertise"
                     description="PPM CONSULTING SOLUTIONS helps organizations improve their Oracle PPM processes and implementations across all core functional modules."
                     align="center"
+                    theme="light"
                 />
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                    {expertiseModules.map((item) => (
+                <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {expertiseModules.map((item, idx) => (
                         <ServiceCard
                             key={item.title}
                             title={item.title}
                             description={item.description}
                             icon={item.icon}
                             badge={item.badge}
+                            theme="light"
+                            delay={0.05 * idx}
                         />
                     ))}
                 </div>

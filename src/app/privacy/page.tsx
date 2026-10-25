@@ -13,73 +13,57 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
     return (
-        <div className="flex flex-col min-h-screen bg-canvas text-color-primary transition-colors">
+        <div className="flex flex-col min-h-screen bg-slate-950 text-slate-100">
             <Navbar />
 
-            <main className="flex-grow pt-32 pb-20 md:pt-38 md:pb-24">
-                <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-                    <div className="space-y-3 text-center">
-                        <div className="inline-flex items-center gap-1.5 px-2.5 py-0.75 rounded-[4px] bg-[#E5E5E5]/50 dark:bg-[#333333] border border-theme text-[#00758F] dark:text-[#00A3C4] text-xs font-bold">
-                            <ShieldCheck className="w-3.5 h-3.5" />
-                            <span>Privacy & Governance</span>
+            <main className="flex-grow pt-32 pb-20 md:pt-40 md:pb-28">
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                    <div className="space-y-4 text-center">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 text-xs font-semibold border border-sky-500/20">
+                            <ShieldCheck className="w-4 h-4" />
+                            <span>Legal & Compliance</span>
                         </div>
-                        <h1 className="text-3xl sm:text-4xl font-bold text-color-primary tracking-tight">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
                             Privacy Policy
                         </h1>
-                        <p className="text-xs sm:text-sm text-color-secondary font-mono">
-                            Last updated: October 2026
+                        <p className="text-sm text-slate-400">
+                            Last updated: October 15, 2026
                         </p>
                     </div>
 
-                    <div className="bg-surface rounded-[10px] p-6 sm:p-10 border border-theme shadow-xs space-y-8 text-xs sm:text-sm text-color-secondary leading-relaxed">
-                        <section className="space-y-2.5">
-                            <h2 className="text-base sm:text-lg font-bold text-color-primary">
-                                1. Practice Introduction
-                            </h2>
+                    <div className="bg-slate-900 rounded-2xl p-6 sm:p-10 border border-slate-800 space-y-8 text-sm text-slate-300 leading-relaxed">
+                        <section className="space-y-3">
+                            <h2 className="text-xl font-bold text-white">1. Introduction</h2>
                             <p>
-                                Welcome to {siteConfig.companyName} (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;). We respect your privacy and are committed to protecting any personal or professional information shared with our firm. As an enterprise advisory practice specializing in Oracle Project Portfolio Management (Oracle PPM), we adhere to rigorous confidentiality and data governance standards.
+                                Welcome to {siteConfig.companyName} (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;). We respect your privacy and are committed to protecting any personal or professional data you share with us through our website. As a specialized Oracle Project Portfolio Management (Oracle PPM) consulting practice, we adhere to strict confidentiality and data governance standards.
                             </p>
                         </section>
 
-                        <section className="space-y-2.5">
-                            <h2 className="text-base sm:text-lg font-bold text-color-primary">
-                                2. Information Collected
-                            </h2>
+                        <section className="space-y-3">
+                            <h2 className="text-xl font-bold text-white">2. Information We Collect</h2>
                             <p>
-                                When you submit an enterprise project inquiry or candidate profile through our contact forms or direct mail channels, we collect only the information provided voluntarily (such as your name, corporate organization, business email address, phone number, and project scope details). We do not collect extraneous tracking telemetry or sell client data to third parties.
+                                This website operates primarily as a static enterprise resource. We do not store or process user form data on remote backend databases. When you submit an enquiry or career application via our contact links or forms, your device generates a direct email draft using your local email client addressed to <span className="text-sky-400 font-semibold">{siteConfig.email}</span>. Consequently, we only receive the information you explicitly choose to send via email.
                             </p>
                         </section>
 
-                        <section className="space-y-2.5">
-                            <h2 className="text-base sm:text-lg font-bold text-color-primary">
-                                3. Purpose & Utilization of Data
-                            </h2>
+                        <section className="space-y-3">
+                            <h2 className="text-xl font-bold text-white">3. Use of Contact Information</h2>
                             <p>
-                                Information submitted via client inquiries or resume submissions is used exclusively by our senior consulting architects and recruitment teams to evaluate prospective advisory engagements, prepare formal statements of work, or assess candidate qualifications.
+                                Any information provided via email enquiries or resume submissions is used exclusively by our senior consulting and talent acquisition teams to evaluate potential advisory engagements, project scoping discussions, or consulting opportunities. We do not sell, rent, or distribute contact lists to third parties.
                             </p>
                         </section>
 
-                        <section className="space-y-2.5">
-                            <h2 className="text-base sm:text-lg font-bold text-color-primary">
-                                4. Cookies & Web Infrastructure
-                            </h2>
+                        <section className="space-y-3">
+                            <h2 className="text-xl font-bold text-white">4. Cookies and Analytics</h2>
                             <p>
-                                This website utilizes only essential functional storage (such as your selected light/dark theme preference) to deliver a consistent reading experience. We do not deploy invasive third-party cross-site advertising trackers or analytics cookies.
+                                Our website does not utilize invasive tracking cookies or third-party advertising scripts. Standard browser caching and hosting telemetry may be utilized solely to ensure optimal performance and security of the static web infrastructure.
                             </p>
                         </section>
 
-                        <section className="space-y-2.5">
-                            <h2 className="text-base sm:text-lg font-bold text-color-primary">
-                                5. Data Governance Contact
-                            </h2>
+                        <section className="space-y-3">
+                            <h2 className="text-xl font-bold text-white">5. Contacting Our Data Governance Practice</h2>
                             <p>
-                                For questions regarding our privacy practices, data handling, or confidentiality commitments, please contact our practice lead directly at{" "}
-                                <a
-                                    href={`mailto:${siteConfig.email}`}
-                                    className="text-[#00758F] dark:text-[#00A3C4] hover:text-[#F80000] font-bold underline"
-                                >
-                                    {siteConfig.email}
-                                </a>.
+                                If you have any questions regarding our privacy practices or confidentiality commitments, please reach out directly to our practice team at <a href={`mailto:${siteConfig.email}`} className="text-sky-400 underline font-semibold">{siteConfig.email}</a>.
                             </p>
                         </section>
                     </div>

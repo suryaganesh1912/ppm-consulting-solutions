@@ -1,107 +1,94 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { SectionHeading } from "../ui/SectionHeading";
+import { ServiceCard } from "../ui/ServiceCard";
 import {
     Briefcase,
     Building2,
     Wrench,
     Cpu,
-    ArrowRight,
+    Factory,
+    Stethoscope,
+    Landmark,
 } from "lucide-react";
 
-const featuredIndustries = [
+const industries = [
     {
-        id: "professional-services",
         title: "Professional Services",
         description:
-            "Granular time-and-materials tracking, billable consultant utilization, milestone accounting, and automated client invoicing.",
+            "Time-and-materials tracking, billable utilization, client project milestone accounting, and resource planning.",
         icon: Briefcase,
-        badge: "T&M Billing",
+        badge: "Target Vertical",
     },
     {
-        id: "construction",
-        title: "Construction & Infrastructure",
+        title: "Construction",
         description:
-            "Capital project cost accumulation, subcontractor commitment tracking, AIA G702 billing compliance, and cost variance monitoring.",
+            "Capital project cost accumulation, subcontractor commitment tracking, AIA billing compliance, and cost variance monitoring.",
         icon: Building2,
-        badge: "AIA Billing & CapEx",
+        badge: "Target Vertical",
     },
     {
-        id: "engineering",
-        title: "Engineering Services",
+        title: "Engineering",
         description:
-            "Deliverable-based progress billing, multi-stage WBS architectures, overhead burdening rates, and earned value performance tracking.",
+            "Complex deliverable-based billing, multi-stage WBS architectures, overhead burdening, and earned value tracking.",
         icon: Wrench,
-        badge: "Earned Value & WBS",
+        badge: "Target Vertical",
     },
     {
-        id: "technology",
-        title: "Technology & Software",
+        title: "Technology",
         description:
-            "Software capitalization compliance (ASC 350-40), internal R&D project costing, agile release tracking, and cloud asset accumulation.",
+            "Software capitalization, R&D project costing, agile release budget tracking, and cloud resource allocation.",
         icon: Cpu,
-        badge: "CapEx R&D",
+        badge: "Target Vertical",
+    },
+    {
+        title: "Manufacturing",
+        description:
+            "Capital expenditure (CapEx) tracking, tooling project costing, plant expansion accounting, and asset capitalization.",
+        icon: Factory,
+        badge: "Target Vertical",
+    },
+    {
+        title: "Healthcare",
+        description:
+            "Facility expansion project controls, clinical research grant costing, equipment acquisition tracking, and compliance reporting.",
+        icon: Stethoscope,
+        badge: "Target Vertical",
+    },
+    {
+        title: "Government",
+        description:
+            "Fund accounting compliance, FAR cost principles alignment, grant project tracking, and public sector audit reporting.",
+        icon: Landmark,
+        badge: "Target Vertical",
     },
 ];
 
 export const IndustriesSection: React.FC = () => {
     return (
-        <section id="industries" className="py-20 bg-canvas-subtle border-b border-theme transition-colors">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-                    <SectionHeading
-                        tagline="Vertical Specialization"
-                        title="Industries We Address"
-                        description="Oracle PPM delivers adaptable project financial accounting tailored to solve domain-specific compliance and revenue recognition challenges."
-                        align="left"
-                    />
-                    <Link
-                        href="/industries"
-                        className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#00758F] dark:text-[#00A3C4] hover:text-[#F80000] hover:underline shrink-0 pb-1"
-                    >
-                        <span>View all 7 supported industries</span>
-                        <ArrowRight className="w-4 h-4" />
-                    </Link>
-                </div>
+        <section id="industries" className="py-20 bg-slate-50 border-t border-slate-200/80">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <SectionHeading
+                    tagline="Sector Focus"
+                    title="Industries We Address"
+                    description="Oracle PPM provides adaptable project financial controls designed to solve domain-specific accounting and operational challenges across complex industries."
+                    align="center"
+                    theme="light"
+                />
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                    {featuredIndustries.map((ind) => {
-                        const Icon = ind.icon;
-                        return (
-                            <Link
-                                key={ind.title}
-                                href={`/industries#${ind.id}`}
-                                className="p-5 sm:p-6 rounded-[8px] bg-surface border border-theme hover:border-[#F80000] shadow-xs transition-colors flex flex-col justify-between group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F80000]"
-                            >
-                                <div className="space-y-3.5">
-                                    <div className="flex items-center justify-between">
-                                        <div className="w-9 h-9 rounded-[6px] bg-[#E5E5E5]/50 dark:bg-[#333333] text-[#00758F] dark:text-[#00A3C4] border border-theme flex items-center justify-center">
-                                            <Icon className="w-4.5 h-4.5" />
-                                        </div>
-                                        <span className="text-[10px] font-mono font-semibold text-color-secondary bg-[#E5E5E5]/60 dark:bg-[#333333] px-2 py-0.5 rounded border border-theme">
-                                            {ind.badge}
-                                        </span>
-                                    </div>
-
-                                    <div>
-                                        <h3 className="text-base font-bold text-color-primary group-hover:text-[#F80000] transition-colors">
-                                            {ind.title}
-                                        </h3>
-                                        <p className="mt-1.5 text-xs text-color-secondary leading-relaxed">
-                                            {ind.description}
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div className="mt-5 pt-3 border-t border-theme-subtle flex items-center justify-between text-xs font-bold text-color-muted group-hover:text-[#F80000] transition-colors">
-                                    <span>Industry workflows</span>
-                                    <ArrowRight className="w-3.5 h-3.5 opacity-60" />
-                                </div>
-                            </Link>
-                        );
-                    })}
+                <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {industries.map((ind, idx) => (
+                        <ServiceCard
+                            key={ind.title}
+                            title={ind.title}
+                            description={ind.description}
+                            icon={ind.icon}
+                            badge={ind.badge}
+                            theme="light"
+                            delay={0.05 * idx}
+                        />
+                    ))}
                 </div>
             </div>
         </section>

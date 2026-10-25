@@ -1,9 +1,10 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import { IndustryCapability } from "@/data/industriesData";
 import { Button } from "../ui/Button";
-import { ArrowRight, Layers, Check } from "lucide-react";
+import { CheckCircle2, ArrowRight, Layers } from "lucide-react";
 
 interface IndustryCardProps {
     capability: IndustryCapability;
@@ -12,67 +13,70 @@ interface IndustryCardProps {
 
 export const IndustryCard: React.FC<IndustryCardProps> = ({
     capability,
+    index,
 }) => {
     const Icon = capability.icon;
 
     return (
-        <div
+        <motion.div
             id={capability.id}
-            className="p-6 sm:p-7 rounded-[10px] bg-surface border border-theme hover:border-[#F80000]/60 shadow-xs transition-colors flex flex-col justify-between group scroll-mt-28"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5, delay: 0.06 * index }}
+            className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-slate-300 transition-all duration-300 flex flex-col justify-between group"
         >
             <div className="space-y-4">
                 {/* Header Icon & Title */}
-                <div className="flex items-start justify-between gap-3">
-                    <div className="w-10 h-10 rounded-[6px] bg-[#F80000] text-white flex items-center justify-center shrink-0 border border-[#D60000] shadow-sm">
-                        <Icon className="w-5 h-5" />
+                <div className="flex items-start justify-between gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center group-hover:bg-sky-600 transition-colors shrink-0">
+                        <Icon className="w-6 h-6" />
                     </div>
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-[4px] bg-[#E5E5E5]/50 dark:bg-[#333333] text-[#00758F] dark:text-[#00A3C4] border border-theme">
-                        Vertical Practice
+                    <span className="text-[11px] font-bold text-sky-700 bg-sky-50 border border-sky-200/60 px-3 py-1 rounded-full uppercase tracking-wider">
+                        Target Vertical Capability
                     </span>
                 </div>
 
                 <div>
-                    <h3 className="text-lg font-bold text-color-primary group-hover:text-[#F80000] transition-colors">
+                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-sky-700 transition-colors">
                         {capability.title}
                     </h3>
-                    <p className="text-xs font-semibold text-[#00758F] dark:text-[#00A3C4] mt-0.5">
+                    <p className="text-xs font-semibold text-slate-400 mt-0.5">
                         {capability.subtitle}
                     </p>
                 </div>
 
                 {/* Capability Summary Statement */}
-                <div className="p-3.5 rounded-[6px] bg-canvas-subtle border border-theme">
-                    <p className="text-xs font-medium text-color-secondary leading-relaxed">
-                        {capability.summary}
+                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80">
+                    <p className="text-sm font-medium text-slate-700 leading-relaxed">
+                        &ldquo;{capability.summary}&rdquo;
                     </p>
                 </div>
 
                 {/* Potential Benefits */}
-                <div className="space-y-2 pt-1">
-                    <h4 className="text-[11px] font-bold uppercase tracking-wider text-color-primary">
-                        Target Enterprise Capabilities
+                <div className="space-y-2 pt-2">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900">
+                        Potential Enterprise Capabilities
                     </h4>
-                    <ul className="space-y-1.5 text-xs text-color-secondary">
+                    <ul className="space-y-2 text-xs text-slate-600">
                         {capability.potentialBenefits.map((benefit) => (
                             <li key={benefit} className="flex items-start gap-2">
-                                <span className="w-3.5 h-3.5 rounded-full bg-[#00758F]/10 dark:bg-[#00A3C4]/15 text-[#00758F] dark:text-[#00A3C4] flex items-center justify-center shrink-0 mt-0.5">
-                                    <Check className="w-2.5 h-2.5" />
-                                </span>
-                                <span className="leading-relaxed">{benefit}</span>
+                                <CheckCircle2 className="w-4 h-4 text-sky-600 shrink-0 mt-0.5" />
+                                <span>{benefit}</span>
                             </li>
                         ))}
                     </ul>
                 </div>
 
                 {/* Applicable Oracle PPM Modules */}
-                <div className="pt-3 border-t border-theme-subtle flex items-center gap-1.5 flex-wrap text-xs text-color-secondary">
-                    <span className="font-semibold text-color-primary flex items-center gap-1 text-[11px]">
-                        <Layers className="w-3.5 h-3.5 text-[#00758F] dark:text-[#00A3C4]" /> Key Modules:
+                <div className="pt-3 border-t border-slate-100 flex items-center gap-2 flex-wrap text-xs text-slate-500">
+                    <span className="font-semibold text-slate-700 flex items-center gap-1">
+                        <Layers className="w-3.5 h-3.5 text-sky-600" /> Key Modules:
                     </span>
                     {capability.keyModules.map((mod) => (
                         <span
                             key={mod}
-                            className="px-2 py-0.5 rounded-[4px] bg-[#E5E5E5]/60 dark:bg-[#333333] text-color-primary text-[10px] font-mono font-medium border border-theme"
+                            className="px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-700 text-[11px] font-medium border border-slate-200"
                         >
                             {mod}
                         </span>
@@ -81,17 +85,17 @@ export const IndustryCard: React.FC<IndustryCardProps> = ({
             </div>
 
             {/* CTA Button */}
-            <div className="mt-6 pt-3.5 border-t border-theme-subtle">
+            <div className="mt-8 pt-4 border-t border-slate-100">
                 <Button
                     href="/contact"
                     variant="secondary"
                     size="sm"
                     fullWidth
-                    icon={<ArrowRight className="w-3.5 h-3.5" />}
+                    icon={<ArrowRight className="w-4 h-4" />}
                 >
-                    Discuss {capability.title} Advisory
+                    Discuss {capability.title} Requirements
                 </Button>
             </div>
-        </div>
+        </motion.div>
     );
 };

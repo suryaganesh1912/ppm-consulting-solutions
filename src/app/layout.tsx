@@ -1,30 +1,17 @@
-import type { Metadata, Viewport } from "next";
-import { Outfit, Inter } from "next/font/google";
+import type { Metadata } from "next";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-heading",
-  weight: ["500", "600", "700", "800", "900"],
-  display: "swap",
+  variable: "--font-jakarta",
+  weight: ["400", "500", "600", "700", "800"],
 });
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-};
 
 export const metadata: Metadata = {
-  title: "PPM CONSULTING SOLUTIONS | Oracle PPM Consulting & Financial Architecture",
+  title: "PPM CONSULTING SOLUTIONS | Oracle PPM Consulting & Solutions",
   description:
-    "Enterprise Oracle Project Portfolio Management (Oracle PPM) advisory, Cloud implementation, project costing, contract billing, financial controls, and integration support.",
+    "Transforming project management with specialized Oracle Project Portfolio Management (Oracle PPM) consulting, implementation, project financial management, costing, billing, planning, and reporting.",
   keywords: [
     "Oracle PPM",
     "Oracle Project Portfolio Management",
@@ -43,28 +30,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${outfit.variable} ${inter.variable} scroll-smooth`}
-      data-scroll-behavior="smooth"
-      suppressHydrationWarning
-    >
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  var stored = localStorage.getItem('ppm-theme');
-                  var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-                  document.documentElement.setAttribute('data-theme', theme);
-                } catch (e) {}
-              })();
-            `,
-          }}
-        />
-      </head>
-      <body className="min-h-screen flex flex-col bg-canvas text-color-primary font-sans antialiased selection:bg-[#F80000] selection:text-white">
+    <html lang="en" className={`${plusJakartaSans.variable} scroll-smooth`}>
+      <body className="min-h-screen flex flex-col bg-white text-slate-900 font-sans antialiased selection:bg-sky-500 selection:text-white">
         {children}
       </body>
     </html>

@@ -1,13 +1,14 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 
 interface SectionHeadingProps {
     tagline?: string;
     title: string;
     description?: string;
     align?: "left" | "center";
-    theme?: "auto" | "light" | "dark";
+    theme?: "light" | "dark"; // "dark" theme is for dark navy backgrounds
     className?: string;
 }
 
@@ -16,52 +17,54 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
     title,
     description,
     align = "center",
-    theme = "auto",
+    theme = "light",
     className = "",
 }) => {
-    const isExplicitDark = theme === "dark";
-
-    const titleColor = isExplicitDark
-        ? "text-white"
-        : "text-color-primary";
-
-    const descColor = isExplicitDark
-        ? "text-[#E5E5E5]"
-        : "text-color-secondary";
-
-    const tagBg = isExplicitDark
-        ? "bg-[#333333] text-[#00A3C4] border-[#3D3D3D]"
-        : "bg-[#E5E5E5]/50 dark:bg-[#333333] text-[#00758F] dark:text-[#00A3C4] border-theme";
+    const isDark = theme === "dark";
 
     return (
         <div
-            className={`max-w-3xl ${
-                align === "center" ? "mx-auto text-center" : "text-left"
-            } ${className}`}
+            className={`max-w-3xl ${align === "center" ? "mx-auto text-center" : "text-left"
+                } ${className}`}
         >
             {tagline && (
-                <div
-                    className={`inline-flex items-center gap-1.5 px-2.5 py-0.75 rounded-[4px] text-[11px] font-bold uppercase tracking-wider mb-3.5 border ${tagBg}`}
+                <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4 }}
+                    className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-4 ${isDark
+                            ? "bg-sky-500/10 text-sky-300 border border-sky-400/20"
+                            : "bg-slate-100 text-slate-700 border border-slate-200"
+                        }`}
                 >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#F80000]" />
-                    <span>{tagline}</span>
-                </div>
+                    <span className="w-1.5 h-1.5 rounded-full bg-sky-500" />
+                    {tagline}
+                </motion.div>
             )}
 
-            <h2
-                className={`text-2xl sm:text-3xl lg:text-4xl font-heading font-bold tracking-tight ${titleColor} leading-[1.2]`}
+            <motion.h2
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className={`text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight ${isDark ? "text-white" : "text-slate-900"
+                    } leading-tight`}
             >
                 {title}
-            </h2>
+            </motion.h2>
 
             {description && (
-                <p
-                    className={`mt-3.5 text-sm sm:text-base ${descColor} leading-relaxed max-w-2xl ${
-                        align === "center" ? "mx-auto" : ""
-                    }`}
+                <motion.p
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className={`mt-4 text-base md:text-lg ${isDark ? "text-slate-300" : "text-slate-600"
+                        } leading-relaxed`}
                 >
                     {description}
-                </p>
+                </motion.p>
             )}
         </div>
     );

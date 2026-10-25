@@ -1,62 +1,67 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import { ServiceDetail } from "@/data/servicesData";
 import { Button } from "../ui/Button";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 interface DetailedServiceCardProps {
     service: ServiceDetail;
+    delay?: number;
 }
 
 export const DetailedServiceCard: React.FC<DetailedServiceCardProps> = ({
     service,
+    delay = 0,
 }) => {
     const Icon = service.icon;
 
     return (
-        <div
+        <motion.div
             id={service.id}
-            className="p-6 sm:p-7 rounded-[10px] bg-surface border border-theme hover:border-[#F80000]/60 shadow-xs transition-colors flex flex-col justify-between group scroll-mt-28"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay }}
+            className="p-6 md:p-8 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-slate-300 transition-all duration-300 flex flex-col justify-between group scroll-mt-28"
         >
             <div className="space-y-4">
                 {/* Category Badge & Icon */}
                 <div className="flex items-center justify-between gap-3">
-                    <div className="w-10 h-10 rounded-[6px] bg-[#F80000] text-white flex items-center justify-center shrink-0 border border-[#D60000] shadow-sm">
-                        <Icon className="w-5 h-5" />
+                    <div className="w-12 h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center group-hover:bg-sky-600 transition-colors shrink-0">
+                        <Icon className="w-6 h-6" />
                     </div>
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-[4px] bg-[#E5E5E5]/50 dark:bg-[#333333] text-[#00758F] dark:text-[#00A3C4] border border-theme">
+                    <span className="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
                         {service.category}
                     </span>
                 </div>
 
                 {/* Title */}
-                <div>
-                    <h3 className="text-lg font-bold text-color-primary group-hover:text-[#F80000] transition-colors">
-                        {service.title}
-                    </h3>
-                    <p className="text-xs font-semibold text-[#00758F] dark:text-[#00A3C4] mt-0.5">
-                        {service.shortDescription}
-                    </p>
-                </div>
+                <h3 className="text-xl font-bold text-slate-900 group-hover:text-sky-700 transition-colors">
+                    {service.title}
+                </h3>
+
+                {/* Short Description */}
+                <p className="text-sm font-semibold text-sky-800">
+                    {service.shortDescription}
+                </p>
 
                 {/* Detailed Explanation */}
-                <p className="text-xs sm:text-sm text-color-secondary leading-relaxed font-normal">
+                <p className="text-sm text-slate-600 leading-relaxed font-normal">
                     {service.detailedExplanation}
                 </p>
 
                 {/* Key Capabilities List */}
-                <div className="pt-3 border-t border-theme-subtle space-y-2">
-                    <h4 className="text-[11px] font-bold uppercase tracking-wider text-color-primary">
-                        Key Capabilities & Deliverables
+                <div className="pt-3 border-t border-slate-100 space-y-2">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900">
+                        Key Capabilities
                     </h4>
-                    <ul className="grid grid-cols-1 gap-1.5 text-xs text-color-secondary">
+                    <ul className="grid grid-cols-1 gap-2 text-xs text-slate-700">
                         {service.keyCapabilities.map((cap) => (
                             <li key={cap} className="flex items-start gap-2">
-                                <span className="w-3.5 h-3.5 rounded-full bg-[#00758F]/10 dark:bg-[#00A3C4]/15 text-[#00758F] dark:text-[#00A3C4] flex items-center justify-center shrink-0 mt-0.5">
-                                    <Check className="w-2.5 h-2.5" />
-                                </span>
-                                <span className="leading-relaxed">{cap}</span>
+                                <CheckCircle2 className="w-4 h-4 text-sky-600 shrink-0 mt-0.5" />
+                                <span>{cap}</span>
                             </li>
                         ))}
                     </ul>
@@ -64,17 +69,17 @@ export const DetailedServiceCard: React.FC<DetailedServiceCardProps> = ({
             </div>
 
             {/* CTA Button */}
-            <div className="mt-6 pt-3.5 border-t border-theme-subtle">
+            <div className="mt-8 pt-4 border-t border-slate-100">
                 <Button
                     href="/contact"
                     variant="secondary"
                     size="sm"
                     fullWidth
-                    icon={<ArrowRight className="w-3.5 h-3.5" />}
+                    icon={<ArrowRight className="w-4 h-4" />}
                 >
-                    Discuss {service.title}
+                    Discuss Requirement
                 </Button>
             </div>
-        </div>
+        </motion.div>
     );
 };

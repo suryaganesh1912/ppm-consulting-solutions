@@ -1,218 +1,28 @@
 @import "tailwindcss";
 
-@theme {
-  --color-primary: var(--color-primary);
-  --color-primary-hover: var(--color-primary-hover);
-  --color-primary-active: var(--color-primary-active);
-  --color-primary-soft: var(--color-primary-soft);
-  --color-primary-border: var(--color-primary-border);
-
-  --color-navy: var(--color-navy);
-  --color-navy-surface: var(--color-navy-surface);
-  --color-navy-50: var(--color-navy-50);
-  --color-navy-100: var(--color-navy-100);
-  --color-navy-200: var(--color-navy-200);
-  --color-navy-300: var(--color-navy-300);
-  --color-navy-400: var(--color-navy-400);
-  --color-navy-500: var(--color-navy-500);
-  --color-navy-600: var(--color-navy-600);
-  --color-navy-700: var(--color-navy-700);
-  --color-navy-800: var(--color-navy-800);
-  --color-navy-900: var(--color-navy-900);
-  --color-navy-950: var(--color-navy-950);
-
-  /* Legacy brand tokens mapped dynamically to root variables */
-  --color-brand-red: var(--color-primary);
-  --color-brand-red-hover: var(--color-primary-hover);
-  --color-brand-blue: var(--color-accent);
-  --color-charcoal: var(--color-charcoal);
-  --color-light-gray: var(--color-border);
-  --font-heading: var(--font-heading), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-sans: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
 @layer base {
   :root {
-    color-scheme: light dark;
+    --navy-950: #070e17;
+    --navy-900: #0b192c;
+    --navy-800: #132a47;
+    --navy-700: #1d3e66;
+    --navy-600: #2a568c;
+    --navy-500: #3b74b8;
 
-    /* 60% Foundation: Crisp, modern light canvas with subtle slate tint */
-    --color-bg: #FFFFFF;
-    --color-bg-subtle: #F8FAFC;
-    --color-surface: #FFFFFF;
-    --color-surface-elevated: #FFFFFF;
-    --color-surface-interactive: #F1F5F9;
+    --blue-accent: #0284c7;
+    --blue-accent-hover: #0369a1;
+    --gold-accent: #d4af37;
 
-    /* 30% Structure & Typography: Deep Slate Charcoal & Borders */
-    --color-text-primary: #0F172A;
-    --color-text-secondary: #334155;
-    --color-text-muted: #64748B;
-    --color-text-inverse: #FFFFFF;
-
-    --color-border: #E2E8F0;
-    --color-border-subtle: #F1F5F9;
-    --color-border-strong: #CBD5E1;
-
-    /* 10% Highlight: Executive Navy Blue (#0A2540) for Buttons, Logos, Badges & CTAs */
-    --color-primary: #0A2540;
-    --color-primary-hover: #1E3A8A;
-    --color-primary-active: #051424;
-    --color-primary-soft: rgba(10, 37, 64, 0.08);
-    --color-primary-border: rgba(10, 37, 64, 0.22);
-
-    /* Complete Navy Blue Grading Scale (50 to 950) */
-    --color-navy-50: #F0F4F8;     /* Ultra-soft icy navy wash */
-    --color-navy-100: #D9E2EC;    /* Delicate navy accent tint */
-    --color-navy-200: #BCCCDC;    /* Subtle slate-navy border */
-    --color-navy-300: #9FB3C8;    /* Muted navy tone */
-    --color-navy-400: #627D98;    /* Slate navy mid-light */
-    --color-navy-500: #486581;    /* Balanced slate navy */
-    --color-navy-600: #334E68;    /* Corporate navy */
-    --color-navy-700: #243B53;    /* Rich naval shade */
-    --color-navy-800: #102A43;    /* Deep midnight navy */
-    --color-navy-900: #0B192C;    /* Classic dark navy */
-    --color-navy-950: #060D17;    /* Abyssal pitch navy */
-
-    /* Navy Brand Base Anchors */
-    --color-navy: #0A2540;
-    --color-navy-surface: #0F1F38;
-
-    /* Harmonious Accent: Cyan / Sky Blue for complementary badges & accents */
-    --color-accent: #0284C7;
-    --color-accent-hover: #0369A1;
-    --color-accent-active: #075985;
-    --color-accent-soft: rgba(2, 132, 199, 0.08);
-    --color-accent-border: rgba(2, 132, 199, 0.25);
-
-    /* Charcoal Foundation */
-    --color-charcoal: #1E293B;
-    --color-charcoal-dark: #0F172A;
-    --color-charcoal-surface: #1E293B;
-
-    /* Semantic States */
-    --color-success: #059669;
-    --color-success-soft: #ECFDF5;
-    --color-warning: #D97706;
-    --color-warning-soft: #FFFBEB;
-    --color-error: #DC2626;
-    --color-error-soft: rgba(220, 38, 38, 0.08);
-    --color-info: #0284C7;
-    --color-info-soft: rgba(2, 132, 199, 0.08);
-
-    --color-focus: #1E3A8A;
-
-    /* Golden Ratio Typography Scale */
-    --font-size-xs: 0.75rem;     /* 12px */
-    --font-size-sm: 0.875rem;    /* 14px */
-    --font-size-base: 1rem;      /* 16px */
-    --font-size-md: 1.125rem;    /* 18px */
-    --font-size-lg: 1.25rem;     /* 20px */
-    --font-size-xl: 1.5rem;      /* 24px */
-    --font-size-2xl: 2rem;       /* 32px */
-    --font-size-3xl: clamp(2rem, 3.5vw, 2.75rem);
-    --font-size-display: clamp(2.5rem, 5vw, 3.5rem);
-
-    /* Spacing Scale */
-    --space-1: 0.25rem;
-    --space-2: 0.5rem;
-    --space-3: 0.75rem;
-    --space-4: 1rem;
-    --space-5: 1.25rem;
-    --space-6: 1.5rem;
-    --space-8: 2rem;
-    --space-10: 2.5rem;
-    --space-12: 3rem;
-    --space-16: 4rem;
-    --space-20: 5rem;
-    --space-24: 6rem;
-
-    /* Radius */
-    --radius-xs: 4px;
-    --radius-sm: 6px;
-    --radius-md: 8px;
-    --radius-lg: 12px;
-    --radius-xl: 16px;
-    --radius-full: 9999px;
-
-    /* Architectural Shadow System */
-    --shadow-xs: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
-    --shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.07), 0 1px 2px -1px rgba(15, 23, 42, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
-    --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.09), 0 4px 6px -4px rgba(15, 23, 42, 0.05);
-
-    /* Motion System */
-    --duration-fast: 150ms;
-    --duration-normal: 250ms;
-    --duration-slow: 400ms;
-    --ease-standard: cubic-bezier(0.2, 0, 0, 1);
-  }
-
-  [data-theme="dark"] {
-    /* Foundation: Deep Midnight Navy Canvas */
-    --color-bg: #090E17;
-    --color-bg-subtle: #0F1726;
-    --color-surface: #111A2B;
-    --color-surface-elevated: #162238;
-    --color-surface-interactive: #1D2D48;
-
-    /* Structure & Typography: Crisp Slate-White & Cool Slate */
-    --color-text-primary: #F8FAFC;
-    --color-text-secondary: #CBD5E1;
-    --color-text-muted: #94A3B8;
-    --color-text-inverse: #090E17;
-
-    --color-border: #1E2C42;
-    --color-border-subtle: #152033;
-    --color-border-strong: #2A3C5A;
-
-    /* Navy Blue Primary System: Radiant High-Contrast Navy/Blue for Dark Mode */
-    --color-primary: #38BDF8;
-    --color-primary-hover: #60A5FA;
-    --color-primary-active: #2563EB;
-    --color-primary-soft: rgba(56, 189, 248, 0.15);
-    --color-primary-border: rgba(56, 189, 248, 0.35);
-
-    /* Complete Navy Blue Grading Scale (Adapted for Dark Mode Luminosity) */
-    --color-navy-50: #060D17;
-    --color-navy-100: #0B192C;
-    --color-navy-200: #102A43;
-    --color-navy-300: #1D2D48;
-    --color-navy-400: #2A3C5A;
-    --color-navy-500: #486581;
-    --color-navy-600: #627D98;
-    --color-navy-700: #9FB3C8;
-    --color-navy-800: #CBD5E1;
-    --color-navy-900: #F1F5F9;
-    --color-navy-950: #FFFFFF;
-
-    --color-navy: #050A11;
-    --color-navy-surface: #0A1320;
-
-    /* Blue Accent for Dark Mode */
-    --color-accent: #38BDF8;
-    --color-accent-hover: #60A5FA;
-    --color-accent-active: #0284C7;
-    --color-accent-soft: rgba(56, 189, 248, 0.15);
-    --color-accent-border: rgba(56, 189, 248, 0.35);
-
-    --color-charcoal: #1E293B;
-    --color-charcoal-dark: #0A0F1D;
-    --color-charcoal-surface: #111A2B;
-
-    --color-success: #34D399;
-    --color-success-soft: rgba(52, 211, 153, 0.12);
-    --color-warning: #FBBF24;
-    --color-warning-soft: rgba(251, 191, 36, 0.12);
-    --color-error: #F87171;
-    --color-error-soft: rgba(248, 113, 113, 0.16);
-    --color-info: #38BDF8;
-    --color-info-soft: rgba(56, 189, 248, 0.15);
-
-    --color-focus: #38BDF8;
-
-    --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.35);
-    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.45), 0 1px 2px -1px rgba(0, 0, 0, 0.35);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.55), 0 2px 4px -2px rgba(0, 0, 0, 0.45);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.65), 0 4px 6px -4px rgba(0, 0, 0, 0.45);
+    --slate-50: #f8fafc;
+    --slate-100: #f1f5f9;
+    --slate-200: #e2e8f0;
+    --slate-300: #cbd5e1;
+    --slate-400: #94a3b8;
+    --slate-500: #64748b;
+    --slate-600: #475569;
+    --slate-700: #334155;
+    --slate-800: #1e293b;
+    --slate-900: #0f172a;
   }
 
   html {
@@ -221,261 +31,45 @@
   }
 
   body {
-    background-color: var(--color-bg);
-    color: var(--color-text-primary);
-    font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #ffffff;
+    color: var(--slate-900);
+    font-family: var(--font-jakarta), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transition: background-color var(--duration-normal) var(--ease-standard),
-                color var(--duration-normal) var(--ease-standard);
-  }
-
-  h1, h2, h3, h4, h5, h6, .font-heading {
-    font-family: var(--font-heading), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    letter-spacing: -0.025em;
-  }
-
-  /* Accessible outline focus state */
-  :focus-visible {
-    outline: 2px solid var(--color-focus);
-    outline-offset: 2px;
   }
 }
 
-/* Reusable Semantic Surface & Color Classes */
-.bg-canvas {
-  background-color: var(--color-bg);
+/* Custom corporate design system classes */
+.navy-gradient {
+  background: linear-gradient(135deg, #0b192c 0%, #132a47 60%, #1d3e66 100%);
 }
 
-.bg-canvas-subtle {
-  background-color: var(--color-bg-subtle);
+.navy-gradient-dark {
+  background: linear-gradient(180deg, #070e17 0%, #0b192c 100%);
 }
 
-.bg-surface {
-  background-color: var(--color-surface);
+.hero-glow {
+  background: radial-gradient(circle at 50% 30%, rgba(2, 132, 199, 0.15) 0%, rgba(11, 25, 44, 0) 70%);
 }
 
-.bg-surface-elevated {
-  background-color: var(--color-surface-elevated);
+.card-glass {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
 }
 
-.bg-surface-interactive {
-  background-color: var(--color-surface-interactive);
+.dark-card-glass {
+  background: rgba(19, 42, 71, 0.6);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.text-color-primary {
-  color: var(--color-text-primary);
-}
-
-.text-color-secondary {
-  color: var(--color-text-secondary);
-}
-
-.text-color-muted {
-  color: var(--color-text-muted);
-}
-
-.border-theme {
-  border-color: var(--color-border);
-}
-
-.border-theme-subtle {
-  border-color: var(--color-border-subtle);
-}
-
-.border-theme-strong {
-  border-color: var(--color-border-strong);
-}
-
-/* Brand Palette Utility Classes */
-.text-brand-red {
-  color: var(--color-primary);
-}
-
-.bg-brand-red {
-  background-color: var(--color-primary);
-}
-
-.border-brand-red {
-  border-color: var(--color-primary);
-}
-
-.text-brand-blue {
-  color: var(--color-accent);
-}
-
-.bg-brand-blue {
-  background-color: var(--color-accent);
-}
-
-.border-brand-blue {
-  border-color: var(--color-accent);
-}
-
-.text-charcoal {
-  color: var(--color-charcoal);
-}
-
-.bg-charcoal {
-  background-color: var(--color-charcoal);
-}
-
-/* Dynamic Root Variable Utility Bindings
-   Binds legacy color utility classes across existing components dynamically
-   to the single source of truth in root variables (--color-primary, etc.) */
-.text-\[\#F80000\] {
-  color: var(--color-primary) !important;
-}
-
-.bg-\[\#F80000\] {
-  background-color: var(--color-primary) !important;
-}
-
-.bg-\[\#F80000\]\/8 {
-  background-color: color-mix(in srgb, var(--color-primary) 8%, transparent) !important;
-}
-
-.bg-\[\#F80000\]\/10 {
-  background-color: var(--color-primary-soft) !important;
-}
-
-.bg-\[\#F80000\]\/60 {
-  background-color: color-mix(in srgb, var(--color-primary) 60%, transparent) !important;
-}
-
-.border-\[\#F80000\] {
-  border-color: var(--color-primary) !important;
-}
-
-.border-\[\#F80000\]\/25 {
-  border-color: var(--color-primary-border) !important;
-}
-
-.border-\[\#F80000\]\/50 {
-  border-color: color-mix(in srgb, var(--color-primary) 50%, transparent) !important;
-}
-
-.border-\[\#D60000\] {
-  border-color: var(--color-primary-hover) !important;
-}
-
-.hover\:text-\[\#F80000\]:hover,
-.hover\:text-brand-red:hover {
-  color: var(--color-primary-hover) !important;
-}
-
-.group:hover .group-hover\:text-\[\#F80000\] {
-  color: var(--color-primary-hover) !important;
-}
-
-.hover\:bg-\[\#F80000\]\/10:hover {
-  background-color: var(--color-primary-soft) !important;
-}
-
-.hover\:bg-\[\#D60000\]:hover {
-  background-color: var(--color-primary-hover) !important;
-}
-
-.active\:bg-\[\#B30000\]:active {
-  background-color: var(--color-primary-active) !important;
-}
-
-.hover\:border-\[\#F80000\]:hover,
-.hover\:border-\[\#F80000\]\/60:hover {
-  border-color: var(--color-primary-hover) !important;
-}
-
-.focus-visible\:ring-\[\#F80000\]:focus-visible {
-  --tw-ring-color: var(--color-focus) !important;
-}
-
-.ring-\[\#F80000\]\/30 {
-  --tw-ring-color: var(--color-primary-border) !important;
-}
-
-.selection\:bg-\[\#F80000\]::selection {
-  background-color: var(--color-primary-soft) !important;
-  color: var(--color-primary) !important;
-}
-
-/* Oracle Brand & Heading Typography Styles */
-.font-oracle {
-  font-family: var(--font-heading);
-  letter-spacing: -0.02em;
-}
-
-.oracle-heading {
-  font-family: var(--font-heading);
-  letter-spacing: -0.025em;
-  font-weight: 700;
-}
-
-.oracle-wordmark {
-  font-family: var(--font-heading);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-weight: 800;
-}
-
-/* Subtle architectural cards */
-.corporate-card {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-sm);
-  border-radius: var(--radius-lg);
-  transition: border-color var(--duration-fast) var(--ease-standard),
-              box-shadow var(--duration-fast) var(--ease-standard);
-}
-
-.corporate-card:hover {
-  border-color: var(--color-primary);
-  box-shadow: var(--shadow-md);
-}
-
-/* Header band */
-.charcoal-header-band {
-  background-color: var(--color-charcoal-dark);
-  color: #FFFFFF;
-}
-
-.navy-header-band {
-  background-color: var(--color-navy);
-  color: #FFFFFF;
-}
-
-/* Skeleton loader animation */
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-.skeleton-box {
-  background: linear-gradient(
-    90deg,
-    var(--color-border-subtle) 25%,
-    var(--color-surface-interactive) 50%,
-    var(--color-border-subtle) 75%
-  );
-  background-size: 200% 100%;
-  animation: shimmer 1.6s infinite ease-in-out;
-  border-radius: var(--radius-sm);
-}
-
-/* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
-  }
-  .skeleton-box {
-    animation: none;
-    background-color: var(--color-border);
   }
 }
