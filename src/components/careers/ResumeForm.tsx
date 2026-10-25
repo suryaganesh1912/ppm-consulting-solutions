@@ -20,10 +20,11 @@ import { siteConfig } from "@/data/config";
 import { exampleJobRoles } from "@/data/careersData";
 
 const experienceOptions = [
-    "1 - 3 Years (Associate Consultant)",
-    "3 - 5 Years (Consultant / Specialist)",
-    "5 - 8 Years (Senior Consultant)",
-    "8+ Years (Principal Architect / Lead)",
+    "0 - 1 Years (Fresher)",
+    "1 - 3 Years",
+    "3 - 5 Years",
+    "5 - 8 Years",
+    "8+ Years",
 ];
 
 export const ResumeForm: React.FC = () => {
@@ -34,7 +35,7 @@ export const ResumeForm: React.FC = () => {
         email: "",
         phone: "",
         role: exampleJobRoles[0]?.title || "Oracle PPM Functional Consultant",
-        experience: experienceOptions[1],
+        experience: experienceOptions[0],
         message: "",
     });
 
@@ -237,7 +238,7 @@ export const ResumeForm: React.FC = () => {
             email: "",
             phone: "",
             role: exampleJobRoles[0]?.title || "Oracle PPM Functional Consultant",
-            experience: experienceOptions[1],
+            experience: experienceOptions[0],
             message: "",
         });
         setResumeFile(null);
